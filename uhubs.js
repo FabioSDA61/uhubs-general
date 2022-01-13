@@ -18,10 +18,10 @@ for (let i = 0; i < buckets.length; i++) {
     for (let i = 1; i < 6; i++) {
         ['.task-name',
         '.task-description', 
-        '.task-duration', 
-        '.task-order',
-        '.task-status'].forEach( function (classNameTask) {
-            classNameTask + [i].toString()
+        '.task-duration',
+        '.task-link',
+        '.task-type'].forEach( function (classNameTask) {
+            classNameTask += "-" + [i].toString()
             console.log(classNameTask)
             const data = buckets[i].querySelector(classNameTask).innerText;
             buckets[i].querySelector(classNameTask + "-input").value = data;
