@@ -1,5 +1,5 @@
 
-
+/*
 
 const buckets = document.getElementsByClassName("populate-w-data");
 
@@ -36,3 +36,4 @@ for (let i = 0; i < buckets.length; i++) {
 
 
 
+*/
