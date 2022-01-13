@@ -15,13 +15,13 @@ for (let i = 0; i < buckets.length; i++) {
         buckets[i].querySelector(className + "-input").value = data;
     });
     
-    for (let i = 1; i < 6; i++) {
+    for (let a = 1; a < 6; a++) {
         ['.task-name',
         '.task-description', 
         '.task-duration',
         '.task-link',
         '.task-type'].forEach( function (classNameTask) {
-            let classNameTaskIteration = classNameTask + "-" + [i].toString()
+            let classNameTaskIteration = classNameTask + "-" + [a].toString()
             console.log(classNameTaskIteration)
             const data = "";
             if (classNameTask !='.task-link') {
