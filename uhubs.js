@@ -2,7 +2,7 @@
 
 
 const buckets = document.getElementsByClassName("populate-w-data");
-console.log(buckets)
+
 
 for (let i = 0; i < buckets.length; i++) {
     ['.bucket-name',
@@ -11,9 +11,23 @@ for (let i = 0; i < buckets.length; i++) {
     '.bucket-order',
     '.bucket-status'].forEach( function (className) {
         console.log(className)
-        const bucketName = buckets[i].querySelector(className).innerText;
-        buckets[i].querySelector(className + "-input").value = bucketName;
+        const data = buckets[i].querySelector(className).innerText;
+        buckets[i].querySelector(className + "-input").value = data;
     });
     
+    for (let i = 1; i < 6; i++) {
+        ['.task-name',
+        '.task-description', 
+        '.task-duration', 
+        '.task-order',
+        '.task-status'].forEach( function (classNameTask) {
+            classNameTask + [i].toString()
+            console.log(classNameTask)
+            const data = buckets[i].querySelector(classNameTask).innerText;
+            buckets[i].querySelector(classNameTask + "-input").value = data;
+        });
+      }
   }
+
+
 
