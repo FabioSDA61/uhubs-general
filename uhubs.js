@@ -23,7 +23,7 @@ for (let i = 0; i < buckets.length; i++) {
         '.task-type'].forEach( function (classNameTask) {
             let classNameTaskIteration = classNameTask + "-" + [a].toString()
             console.log(classNameTaskIteration)
-            const data = "";
+            let data = "";
             if (classNameTask !='.task-link') {
               data = buckets[i].querySelector(classNameTaskIteration).innerText;
             } else {
