@@ -21,10 +21,15 @@ for (let i = 0; i < buckets.length; i++) {
         '.task-duration',
         '.task-link',
         '.task-type'].forEach( function (classNameTask) {
-            classNameTask += "-" + [i].toString()
-            console.log(classNameTask)
-            const data = buckets[i].querySelector(classNameTask).innerText;
-            buckets[i].querySelector(classNameTask + "-input").value = data;
+            let classNameTaskIteration = classNameTask + "-" + [i].toString()
+            console.log(classNameTaskIteration)
+            const data;
+            if (classNameTask !='.task-link') {
+              data = buckets[i].querySelector(classNameTaskIteration).innerText;
+            } else {
+              data = buckets[i].querySelector(classNameTaskIteration).href;
+            }
+            buckets[i].querySelector(classNameTaskIteration + "-input").value = data;
         });
       }
   }
