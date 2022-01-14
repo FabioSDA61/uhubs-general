@@ -50,7 +50,9 @@ for (let i = 0; i < buckets.length; i++) {
     };
 
     for (let a = 1; a < 6; a++) {
-      buckets[i].querySelector(".update-task-button" + [a].toString()).onclick = function(){
+      let selector = ".update-task-button" + [a].toString();
+      console.log(selector);
+      buckets[i].querySelector(selector).onclick = function(){
         ['.task-name',
           '.task-description', 
           '.task-duration',
