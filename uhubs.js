@@ -44,8 +44,8 @@ for (let i = 0; i < buckets.length; i++) {
         '.bucket-duration', 
         '.bucket-order',
         '.bucket-status'].forEach( function (className) {
-          console.log(className)
-          let data = buckets[i].querySelector(className + "-input").value
+          let classNameInput = className + "-input";
+          let data = buckets[i].querySelector(classNameInput).value
           console.log(data)
           buckets[i].querySelector(className).innerText = data
         });
