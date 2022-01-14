@@ -44,7 +44,9 @@ for (let i = 0; i < buckets.length; i++) {
         '.bucket-duration', 
         '.bucket-order',
         '.bucket-status'].forEach( function (className) {
+          console.log(className)
           let data = buckets[i].querySelector(className + "-input").value
+          console.log(data)
           buckets[i].querySelector(className).innerText = data
         });
       };
@@ -60,8 +62,10 @@ for (let i = 0; i < buckets.length; i++) {
           '.task-duration',
           '.task-link',
           '.task-type'].forEach( function (classNameTask) {
+            console.log(classNameTask)
               let classNameTaskIteration = classNameTask + "-" + [a].toString()
               let data = buckets[i].querySelector(classNameTaskIteration + "-input").value;
+              console.log(data)
               if (classNameTask !='.task-link') {
                 buckets[i].querySelector(classNameTaskIteration).innerText = data;
               } else {
