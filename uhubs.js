@@ -32,7 +32,7 @@ for (let i = 0; i < buckets.length; i++) {
   }
 
   function handleUpdate () {
-    let buckets = document.getElementsByClassName("populate-w-data");
+
     
       for (let i = 0; i < buckets.length; i++) {
 
@@ -48,7 +48,7 @@ for (let i = 0; i < buckets.length; i++) {
           buckets[i].querySelector(className).innerText = data
         });
       };
-    };
+    
 
     for (let a = 1; a < 6; a++) {
       let selector = ".update-task-button-" + [a].toString();
@@ -70,6 +70,7 @@ for (let i = 0; i < buckets.length; i++) {
           });
         }
       }
+    };
   };
 
 handleUpdate();
