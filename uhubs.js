@@ -1,6 +1,6 @@
 
 
-const buckets = document.getElementsByClassName("populate-w-data");
+let buckets = document.getElementsByClassName("populate-w-data");
 
 
 for (let i = 0; i < buckets.length; i++) {
@@ -32,6 +32,7 @@ for (let i = 0; i < buckets.length; i++) {
   }
 
   function handleUpdate () {
+    let buckets = document.getElementsByClassName("populate-w-data");
     
       for (let i = 0; i < buckets.length; i++) {
 
@@ -52,6 +53,7 @@ for (let i = 0; i < buckets.length; i++) {
     for (let a = 1; a < 6; a++) {
       let selector = ".update-task-button-" + [a].toString();
       console.log(selector);
+      console.log(buckets[i]);
       buckets[i].querySelector(selector).onclick = function(){
         ['.task-name',
           '.task-description', 
