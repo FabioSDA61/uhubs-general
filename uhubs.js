@@ -36,6 +36,7 @@ for (let i = 0; i < buckets.length; i++) {
       for (let i = 0; i < buckets.length; i++) {
 
         buckets[i].querySelector("update-bucket-button").onclick = function(){
+          console.log('Click')
 
         ['.bucket-name',
         '.bucket-description', 
@@ -67,3 +68,4 @@ for (let i = 0; i < buckets.length; i++) {
       }
   };
 
+handleUpdate();
