@@ -38,7 +38,10 @@ for (let i = 0; i < buckets.length; i++) {
 
         buckets[i].querySelector(".update-bucket-button").onclick = function(){
           console.log('Click bucket')
-
+          
+          buckets[i].querySelector('.bucket-update-success-statement w-form-done').style.display = "none"
+          buckets[i].querySelector('.bucket-update-form').style.display = "flex"
+          
           buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
           buckets[i].querySelector('.bucket-description').innerHTML = buckets[i].querySelector('.bucket-description-input').value
           buckets[i].querySelector('.bucket-duration').innerHTML = buckets[i].querySelector('.bucket-duration-input').value
