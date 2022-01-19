@@ -37,7 +37,7 @@ for (let i = 0; i < buckets.length; i++) {
       for (let i = 0; i < buckets.length; i++) {
 
         buckets[i].querySelector(".update-bucket-button").onclick = function(){
-          console.log('Click bucket')
+
           /*
           buckets[i].querySelector('.bucket-update-success-statement').style.display = "none"
           buckets[i].querySelector('.bucket-update-form').style.display = "block"
@@ -55,18 +55,15 @@ for (let i = 0; i < buckets.length; i++) {
 
     for (let a = 1; a < 6; a++) {
       let selector = ".update-task-button-" + [a].toString();
-      console.log(selector);
-      console.log(buckets[i]);
       buckets[i].querySelector(selector).onclick = function(){
         ['.task-name',
           '.task-description', 
           '.task-duration',
           '.task-link',
           '.task-type'].forEach( function (classNameTask) {
-            console.log(classNameTask)
               let classNameTaskIteration = classNameTask + "-" + [a].toString()
               let data = buckets[i].querySelector(classNameTaskIteration + "-input").value;
-              console.log(data)
+              
               if (classNameTask !='.task-link') {
                 buckets[i].querySelector(classNameTaskIteration).innerText = data;
               } else {
