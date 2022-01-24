@@ -310,7 +310,7 @@ for (let i = 0; i < buckets.length; i++) {
   let completeButtons = buckets[i].querySelectorAll(".mark-bucket-as-completed-button");
   for (let a = 0; a < completeButtons.length; a++) {
     console.log("confetti interaction set stage2")
-    buckets[i].completeButtons[a].onclick = function(){
+    completeButtons[a].onclick = function(){
       console.log("click")
       fireConfetti(buckets[i]);
     };  
