@@ -87,7 +87,7 @@ handleUpdate();
 
   console.log('not manager')
   
-fireConfetti = function (parentElement) {
+function fireConfetti(parentElement) {
   console.log('confetti function called on:')
   console.log(parentElement)
 
