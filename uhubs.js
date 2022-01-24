@@ -306,12 +306,15 @@ function fireConfetti(parentElement) {
 
 // set Confetti interaction on all buckets
 for (let i = 0; i < buckets.length; i++) {
-  console.log("confetti interaction set")
-  buckets[i].querySelector(".mark-bucket-as-completed-button").onclick = function(){
-    console.log("click")
-    fireConfetti(buckets[i]);
-  };  
-
+  console.log("confetti interaction set stage1")
+  let completeButtons = buckets[i].querySelectorAll(".mark-bucket-as-completed-button");
+  for (let a = 0; a < completeButtons.length; a++) {
+    console.log("confetti interaction set stage2")
+    buckets[i].completeButtons[a].onclick = function(){
+      console.log("click")
+      fireConfetti(buckets[i]);
+    };  
+  };
 };
 }
 
