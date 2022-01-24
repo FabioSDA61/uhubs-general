@@ -2,14 +2,10 @@
 // get all buckets
 let buckets = document.getElementsByClassName("populate-w-data");
 
-
-
-
  
 
 if ("{{wf {&quot;path&quot;:&quot;role&quot;,&quot;type&quot;:&quot;Option&quot;\} }}" == "Manager") {
   // Populate the update forms of tasks and buckets with the according data
-
 
 for (let i = 0; i < buckets.length; i++) {
   ['.bucket-name',
@@ -88,6 +84,8 @@ function handleUpdate () {
 handleUpdate();
 
 } else {
+
+  console.log('not manager')
   
 fireConfetti = function (parentElement) {
   console.log('confetti function called on:')
@@ -308,8 +306,9 @@ fireConfetti = function (parentElement) {
 
 // set Confetti interaction on all buckets
 for (let i = 0; i < buckets.length; i++) {
+  console.log("confetti interaction set")
   buckets[i].querySelector(".mark-bucket-as-completed-button").onclick = function(){
-    console.log("confetti interaction set")
+    console.log("click")
     fireConfetti(buckets[i]);
   };  
 
