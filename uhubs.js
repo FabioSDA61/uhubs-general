@@ -90,6 +90,9 @@ handleUpdate();
 } else {
   
 fireConfetti = function (parentElement) {
+  console.log('confetti function called on:')
+  console.log(parentElement)
+
   // Globals
   var random = Math.random
     , cos = Math.cos
@@ -306,6 +309,7 @@ fireConfetti = function (parentElement) {
 // set Confetti interaction on all buckets
 for (let i = 0; i < buckets.length; i++) {
   buckets[i].querySelector(".mark-bucket-as-completed-button").onclick = function(){
+    console.log("confetti interaction set")
     fireConfetti(buckets[i]);
   };  
 
