@@ -112,7 +112,7 @@ handleUpdate();
     }
     // document.body.appendChild(c);
       $(this).append(c);
-    })
+    }
 
     }
   
