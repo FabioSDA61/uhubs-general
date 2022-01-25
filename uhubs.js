@@ -91,7 +91,8 @@ handleUpdate();
   for (let a = 0; a < confettiButtons.length; a++) {
     console.log('confetti attached')
     
-    confettiButtons[a].on('click', function(){  
+    confettiButtons[a].onclick = function(){
+
       function random(max){
           return Math.random() * (max - 0) + 0;
       }
