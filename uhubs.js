@@ -3,11 +3,13 @@
 // get all buckets
 let buckets = document.getElementsByClassName("populate-w-data");
 
- 
+//If statement to dinstinguish between manager and team member 
 
 if ("{{wf {&quot;path&quot;:&quot;role&quot;,&quot;type&quot;:&quot;Option&quot;\} }}" == "Manager") {
-  // Populate the update forms of tasks and buckets with the according data
-
+//check if current user is manager
+  
+  
+ // Populate the update forms of tasks and buckets with the according data
 for (let i = 0; i < buckets.length; i++) {
   ['.bucket-name',
   '.bucket-description', 
@@ -85,6 +87,40 @@ function handleUpdate () {
 handleUpdate();
 
 } else {
+
+  //Else statement for team member code
+
+
+  //Sort buckets by order Position
+  function sortBucket(); {
+    const bucketWrappers = document.querySelectorAll('.bucketWrapper')
+
+    for (let y = 0; y < bucketWrappers.length; y++) {
+
+        const buckets = bucketWrappers[y].querySelectorAll('.bucket')
+        console.log(buckets)
+        const newClassName = '.bucketWrapper' + y
+        bucketWrappers[y].classList.add('bucketWrapper' + y);
+        console.log(newClassName)
+
+        for (let i = 0; i < buckets.length; i++) {
+            
+        const orderPosition = buckets[i].querySelector('.orderPosition').innerText;
+        buckets[i].setAttribute("orderPosition", orderPosition);
+        console.log(buckets[i])
+        }
+            
+        var $wrapper = $(newClassName);
+
+            $wrapper.find('.bucket').sort(function(a, b) {
+                return +a.getAttribute('orderPosition') - +b.getAttribute('orderPosition');
+            })
+            .appendTo($wrapper);
+    }
+
+}
+
+sortBuckets();
 
   let confettiButtons = document.getElementsByClassName("confetti-button");
 

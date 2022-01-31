@@ -1,0 +1,118 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<div class="bucketWrapper" style="display:flex">
+    <div class="bucket">
+        <h1 class="orderPosition">1</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition">4</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >3</h1>
+    </div>
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >2</h1>
+    </div>
+    
+</div>
+
+<div class="bucketWrapper" style="display:flex">
+    <div class="bucket">
+        <h1 class="orderPosition">1</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition">4</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >3</h1>
+    </div>
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >2</h1>
+    </div>
+    
+</div>
+
+<div class="bucketWrapper" style="display:flex">
+    <div class="bucket">
+        <h1 class="orderPosition">1</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition">4</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >3</h1>
+    </div>
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >2</h1>
+    </div>
+
+    <div class="bucket">
+        <h1 class="orderPosition">5</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition">6</h1>
+    </div>
+    
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >7</h1>
+    </div>
+    
+    <div class="bucket">
+        <h1 class="orderPosition" >8</h1>
+    </div>
+    
+</div>
+
+<script>
+
+    function sortBucket(); {
+        const bucketWrappers = document.querySelectorAll('.bucketWrapper')
+
+        for (let y = 0; y < bucketWrappers.length; y++) {
+
+            const buckets = bucketWrappers[y].querySelectorAll('.bucket')
+            console.log(buckets)
+            const newClassName = '.bucketWrapper' + y
+            bucketWrappers[y].classList.add('bucketWrapper' + y);
+            console.log(newClassName)
+
+            for (let i = 0; i < buckets.length; i++) {
+                
+            const orderPosition = buckets[i].querySelector('.orderPosition').innerText;
+            buckets[i].setAttribute("orderPosition", orderPosition);
+            console.log(buckets[i])
+            }
+                
+            var $wrapper = $(newClassName);
+
+                $wrapper.find('.bucket').sort(function(a, b) {
+                    return +a.getAttribute('orderPosition') - +b.getAttribute('orderPosition');
+                })
+                .appendTo($wrapper);
+        }
+
+    }
+
+    sortBuckets();
+
+
+
+</script>
