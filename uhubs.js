@@ -92,7 +92,7 @@ handleUpdate();
 
 
   //Sort buckets by order Position
-  function sortBucket(); {
+  function sortBucket() {
     const bucketWrappers = document.querySelectorAll('.bucketwrapper')
 
     for (let y = 0; y < bucketWrappers.length; y++) {
