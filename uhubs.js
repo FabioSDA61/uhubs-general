@@ -86,6 +86,17 @@ function handleUpdate () {
 
 handleUpdate();
 
+
+
+//Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
+document.getElementById("trigger-reset-create-bucket-form").onclick = function () {
+  document.getElementById("target-reset-create-bucket-form").click();
+  document.getElementById("create_bucket").style.display = "block";
+  document.getElementById("bucket-success-statement").style.display = "none";
+}
+
+
+
 } else {
 
   //Else statement for team member code
@@ -118,10 +129,11 @@ handleUpdate();
             .appendTo($wrapper);
     }
 
-}
+  }
 
-sortBuckets();
+  sortBuckets();
 
+  //Apply confetti interaction effect to all elements with according class
   let confettiButtons = document.getElementsByClassName("confetti-button");
 
   for (let a = 0; a < confettiButtons.length; a++) {
