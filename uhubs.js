@@ -119,18 +119,20 @@ handleUpdate();
 
 
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
-const handleCreateBucketFormReset = document.getElementById("trigger-reset-create-bucket-form")
-console.log("attached bucket form reset handler")
-handleCreateBucketFormReset.onclick = function () {
-  console.log("Click")
-  document.getElementById("target-reset-create-bucket-form").click();
-  document.getElementById("create_bucket").style.display = "block";
-  document.getElementById("bucket-success-statement").style.display = "none";
-}
+
 
 
 
 } else {
+
+  const handleCreateBucketFormReset = document.getElementById("trigger-reset-create-bucket-form")
+  console.log("attached bucket form reset handler")
+  handleCreateBucketFormReset.onclick = function () {
+    console.log("Click")
+    document.getElementById("target-reset-create-bucket-form").click();
+    document.getElementById("create_bucket").style.display = "block";
+    document.getElementById("bucket-success-statement").style.display = "none";
+  }
 
   console.log('current user is team member')
 
