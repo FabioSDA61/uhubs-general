@@ -89,7 +89,9 @@ handleUpdate();
 
 
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
-document.getElementById("trigger-reset-create-bucket-form").onclick = function () {
+const handleCreateBucketFormReset = document.getElementById("trigger-reset-create-bucket-form")
+
+handleCreateBucketFormReset.onclick = function () {
   console.log("Click")
   document.getElementById("target-reset-create-bucket-form").click();
   document.getElementById("create_bucket").style.display = "block";
@@ -135,7 +137,7 @@ document.getElementById("trigger-reset-create-bucket-form").onclick = function (
   let confettiButtons = document.getElementsByClassName("confetti-button");
 
   for (let a = 0; a < confettiButtons.length; a++) {
-    console.log('confetti attached')
+
     
     confettiButtons[a].onclick = function(){
 
@@ -143,7 +145,7 @@ document.getElementById("trigger-reset-create-bucket-form").onclick = function (
           return Math.random() * (max - 0) + 0;
       }
   
-      console.log('click')
+
     
       var c = document.createDocumentFragment();
       for (var i=0; i<100; i++) {
