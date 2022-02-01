@@ -32,7 +32,7 @@ function sortBuckets() {
 }
 
 sortBuckets();
-const 
+
 const role = user.metadata.app.role
 console.log(role)
 // document.getElementById("role").innerText
