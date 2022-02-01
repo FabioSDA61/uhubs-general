@@ -33,8 +33,9 @@ function sortBuckets() {
 
 sortBuckets();
 
-
+console.log("{{wf {&quot;path&quot;:&quot;role&quot;,&quot;type&quot;:&quot;Option&quot;\} }}")
 if ("{{wf {&quot;path&quot;:&quot;role&quot;,&quot;type&quot;:&quot;Option&quot;\} }}" == "Manager") {
+
 //check if current user is manager
  console.log('current user is manager')
 
@@ -124,6 +125,7 @@ handleUpdate();
 
 
 } else {
+  
 
   const handleCreateBucketFormReset = document.getElementById("trigger-reset-create-bucket-form")
   console.log("attached bucket form reset handler")
