@@ -1,3 +1,5 @@
+auth0EventEmitter.addEventListener("ready", () => {
+//start auth0 Eventemitter Wrap  
 
 
 // get all buckets
@@ -34,7 +36,7 @@ function sortBuckets() {
 sortBuckets();
 
 
-const isManager = user.metadata.app.role == 'Manager'? true : false;
+const isManager = metadata.app.role == 'Manager'? true : false;
 
 if (isManager) {
 
@@ -175,6 +177,9 @@ const handleCreateBucketFormReset = document.getElementById("trigger-reset-creat
   
   
 };
+
+//end auth0 Eventemitter Wrap
+})
 
 
 
