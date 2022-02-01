@@ -90,6 +90,7 @@ handleUpdate();
 
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
 document.getElementById("trigger-reset-create-bucket-form").onclick = function () {
+  console.log("Click")
   document.getElementById("target-reset-create-bucket-form").click();
   document.getElementById("create_bucket").style.display = "block";
   document.getElementById("bucket-success-statement").style.display = "none";
@@ -109,16 +110,13 @@ document.getElementById("trigger-reset-create-bucket-form").onclick = function (
     for (let y = 0; y < bucketWrappers.length; y++) {
 
         const buckets = bucketWrappers[y].querySelectorAll('.bucket')
-        console.log(buckets)
         const newClassName = '.bucketwrapper' + y
         bucketWrappers[y].classList.add('bucketwrapper' + y);
-        console.log(newClassName)
 
         for (let i = 0; i < buckets.length; i++) {
             
         const orderPosition = buckets[i].querySelector('.order-position').innerText;
         buckets[i].setAttribute("orderPosition", orderPosition);
-        console.log(buckets[i])
         }
             
         var $wrapper = $(newClassName);
