@@ -73,7 +73,7 @@ for (let i = 0; i < buckets.length; i++) {
 
 */
 // Handle update of buckets and tasks i.e. update tasks and bucket immediately after form submission
-
+/*
 function handleUpdate () {
 
   
@@ -84,7 +84,7 @@ function handleUpdate () {
         /*
         buckets[i].querySelector('.bucket-update-success-statement').style.display = "none"
         buckets[i].querySelector('.bucket-update-form').style.display = "block"
-        */
+        
         
         buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
         buckets[i].querySelector('.bucket-description').innerHTML = buckets[i].querySelector('.bucket-description-input').value
@@ -119,7 +119,7 @@ function handleUpdate () {
 };
 
 handleUpdate();
-
+*/
 
 
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
