@@ -89,42 +89,43 @@ function handleUpdate () {
   
     for (let i = 0; i < buckets.length; i++) {
 
-      buckets[i].querySelector(".update-bucket-button").onclick = function(){
+      let updateBucketButton = buckets[i].querySelector(".update-bucket-button") 
 
-        /*
-        buckets[i].querySelector('.bucket-update-success-statement').style.display = "none"
-        buckets[i].querySelector('.bucket-update-form').style.display = "block"
-        */
+      if (updateBucketButton) {
+        updateBucketButton.onclick = function(){
         
-        buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
-        buckets[i].querySelector('.bucket-description').innerHTML = buckets[i].querySelector('.bucket-description-input').value
-        buckets[i].querySelector('.bucket-duration').innerHTML = buckets[i].querySelector('.bucket-duration-input').value
-        buckets[i].querySelector('.bucket-order').innerHTML = buckets[i].querySelector('.bucket-order-input').value
-        buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
-        buckets[i].querySelector('.bucket-color').style.backgroundColor = buckets[i].querySelector('.bucket-color-input').value
-
-    };
+          buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
+          buckets[i].querySelector('.bucket-description').innerHTML = buckets[i].querySelector('.bucket-description-input').value
+          buckets[i].querySelector('.bucket-duration').innerHTML = buckets[i].querySelector('.bucket-duration-input').value
+          buckets[i].querySelector('.bucket-order').innerHTML = buckets[i].querySelector('.bucket-order-input').value
+          buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
+          buckets[i].querySelector('.bucket-color').style.backgroundColor = buckets[i].querySelector('.bucket-color-input').value
   
+      };
+  
+      for (let a = 1; a < 6; a++) {
+        let selector = ".update-task-button-" + [a].toString();
+        buckets[i].querySelector(selector).onclick = function(){
+          ['.task-name',
+            '.task-description', 
+            '.task-duration',
+            '.task-link',
+            '.task-type'].forEach( function (classNameTask) {
+                let classNameTaskIteration = classNameTask + "-" + [a].toString()
+                let data = buckets[i].querySelector(classNameTaskIteration + "-input").value;
+                
+                if (classNameTask !='.task-link') {
+                  buckets[i].querySelector(classNameTaskIteration).innerText = data;
+                } else {
+                  buckets[i].querySelector(classNameTaskIteration).href = data;
+                }
+            });
+          }
+        }
 
-  for (let a = 1; a < 6; a++) {
-    let selector = ".update-task-button-" + [a].toString();
-    buckets[i].querySelector(selector).onclick = function(){
-      ['.task-name',
-        '.task-description', 
-        '.task-duration',
-        '.task-link',
-        '.task-type'].forEach( function (classNameTask) {
-            let classNameTaskIteration = classNameTask + "-" + [a].toString()
-            let data = buckets[i].querySelector(classNameTaskIteration + "-input").value;
-            
-            if (classNameTask !='.task-link') {
-              buckets[i].querySelector(classNameTaskIteration).innerText = data;
-            } else {
-              buckets[i].querySelector(classNameTaskIteration).href = data;
-            }
-        });
       }
-    }
+
+      
   };
 };
 
