@@ -32,9 +32,13 @@ function sortBuckets() {
 }
 
 sortBuckets();
+const 
+const role = user.metadata.app.role
+console.log('role')
+// document.getElementById("role").innerText
+const isManager = role == "Manager" ? true : false;
 
-console.log("{{wf {&quot;path&quot;:&quot;role&quot;,&quot;type&quot;:&quot;Option&quot;\} }}")
-if ("{{wf {&quot;path&quot;:&quot;role&quot;,&quot;type&quot;:&quot;Option&quot;\} }}" == "Manager") {
+if (isManager) {
 
 //check if current user is manager
  console.log('current user is manager')
@@ -120,14 +124,9 @@ handleUpdate();
 
 
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
+ 
 
-
-
-
-} else {
-  
-
-  const handleCreateBucketFormReset = document.getElementById("trigger-reset-create-bucket-form")
+const handleCreateBucketFormReset = document.getElementById("trigger-reset-create-bucket-form")
   console.log("attached bucket form reset handler")
   handleCreateBucketFormReset.onclick = function () {
     console.log("Click")
@@ -136,8 +135,9 @@ handleUpdate();
     document.getElementById("bucket-success-statement").style.display = "none";
   }
 
-  console.log('current user is team member')
 
+
+} else {
   //Else statement for team member code
 
 
