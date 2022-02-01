@@ -5,10 +5,40 @@ let buckets = document.getElementsByClassName("populate-w-data");
 
 //If statement to dinstinguish between manager and team member 
 
+//Sort buckets by order Position
+function sortBuckets() {
+  const bucketWrappers = document.querySelectorAll('.bucketwrapper')
+
+  for (let y = 0; y < bucketWrappers.length; y++) {
+
+      const buckets = bucketWrappers[y].querySelectorAll('.bucket')
+      const newClassName = '.bucketwrapper' + y
+      bucketWrappers[y].classList.add('bucketwrapper' + y);
+
+      for (let i = 0; i < buckets.length; i++) {
+          
+      const orderPosition = buckets[i].querySelector('.order-position').innerText;
+      buckets[i].setAttribute("orderPosition", orderPosition);
+      }
+          
+      var $wrapper = $(newClassName);
+
+          $wrapper.find('.bucket').sort(function(a, b) {
+              return +a.getAttribute('orderPosition') - +b.getAttribute('orderPosition');
+          })
+          .appendTo($wrapper);
+  }
+
+}
+
+sortBuckets();
+
+
 if ("{{wf {&quot;path&quot;:&quot;role&quot;,&quot;type&quot;:&quot;Option&quot;\} }}" == "Manager") {
 //check if current user is manager
-  
-  
+ console.log('current user is manager')
+
+
  // Populate the update forms of tasks and buckets with the according data
 for (let i = 0; i < buckets.length; i++) {
   ['.bucket-name',
@@ -90,7 +120,7 @@ handleUpdate();
 
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
 const handleCreateBucketFormReset = document.getElementById("trigger-reset-create-bucket-form")
-
+console.log("attached bucket form reset handler")
 handleCreateBucketFormReset.onclick = function () {
   console.log("Click")
   document.getElementById("target-reset-create-bucket-form").click();
@@ -102,36 +132,12 @@ handleCreateBucketFormReset.onclick = function () {
 
 } else {
 
+  console.log('current user is team member')
+
   //Else statement for team member code
 
 
-  //Sort buckets by order Position
-  function sortBuckets() {
-    const bucketWrappers = document.querySelectorAll('.bucketwrapper')
-
-    for (let y = 0; y < bucketWrappers.length; y++) {
-
-        const buckets = bucketWrappers[y].querySelectorAll('.bucket')
-        const newClassName = '.bucketwrapper' + y
-        bucketWrappers[y].classList.add('bucketwrapper' + y);
-
-        for (let i = 0; i < buckets.length; i++) {
-            
-        const orderPosition = buckets[i].querySelector('.order-position').innerText;
-        buckets[i].setAttribute("orderPosition", orderPosition);
-        }
-            
-        var $wrapper = $(newClassName);
-
-            $wrapper.find('.bucket').sort(function(a, b) {
-                return +a.getAttribute('orderPosition') - +b.getAttribute('orderPosition');
-            })
-            .appendTo($wrapper);
-    }
-
-  }
-
-  sortBuckets();
+  
 
   //Apply confetti interaction effect to all elements with according class
   let confettiButtons = document.getElementsByClassName("confetti-button");
