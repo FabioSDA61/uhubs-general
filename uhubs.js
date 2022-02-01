@@ -51,8 +51,11 @@ for (let i = 0; i < buckets.length; i++) {
   '.bucket-duration', 
   '.bucket-order',
   '.bucket-status'].forEach( function (className) {
-      const data = buckets[i].querySelector(className).innerText;
-      buckets[i].querySelector(className + "-input").value = data;
+    let element = buckets[i].querySelector(className)
+    if (element) {
+      const data = element.innerText;
+      buckets[i].querySelector(className + "-input").value = data;}
+      
   });
   
   for (let a = 1; a < 6; a++) {
