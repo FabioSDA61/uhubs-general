@@ -34,7 +34,7 @@ function sortBuckets() {
 sortBuckets();
 const 
 const role = user.metadata.app.role
-console.log('role')
+console.log(role)
 // document.getElementById("role").innerText
 const isManager = role == "Manager" ? true : false;
 
