@@ -40,7 +40,7 @@ if (isManager) {
 
 //check if current user is manager
  console.log('current user is manager')
-
+/*
 
  // Populate the update forms of tasks and buckets with the according data
 for (let i = 0; i < buckets.length; i++) {
@@ -71,6 +71,7 @@ for (let i = 0; i < buckets.length; i++) {
     }
 }
 
+*/
 // Handle update of buckets and tasks i.e. update tasks and bucket immediately after form submission
 
 function handleUpdate () {
