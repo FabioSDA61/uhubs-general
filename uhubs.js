@@ -64,6 +64,9 @@ for (let i = 0; i < buckets.length; i++) {
       '.task-duration',
       '.task-link',
       '.task-type'].forEach( function (classNameTask) {
+        const taskElement = buckets[i].querySelector(classNameTaskIteration)
+
+        if (taskElement) {
           let classNameTaskIteration = classNameTask + "-" + [a].toString()
           let data = "";
           if (classNameTask !='.task-link') {
@@ -71,7 +74,9 @@ for (let i = 0; i < buckets.length; i++) {
           } else {
             data = buckets[i].querySelector(classNameTaskIteration).href;
           }
-          buckets[i].querySelector(classNameTaskIteration + "-input").value = data;
+          buckets[i].querySelector(classNameTaskIteration + "-input").value = data
+        }
+            
       });
     }
 }
