@@ -64,11 +64,11 @@ for (let i = 0; i < buckets.length; i++) {
       '.task-duration',
       '.task-link',
       '.task-type'].forEach( function (classNameTask) {
+        let classNameTaskIteration = classNameTask + "-" + [a].toString()
+        let data = "";
         const taskElement = buckets[i].querySelector(classNameTaskIteration)
 
-        if (taskElement) {
-          let classNameTaskIteration = classNameTask + "-" + [a].toString()
-          let data = "";
+        if (taskElement) {        
           if (classNameTask !='.task-link') {
             data = buckets[i].querySelector(classNameTaskIteration).innerText;
           } else {
