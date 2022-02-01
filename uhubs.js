@@ -34,7 +34,7 @@ function sortBuckets() {
 sortBuckets();
 
 
-const isManager = role == metadata.app.role ? true : false;
+const isManager = user.metadata.app.role == 'Manager'? true : false;
 
 if (isManager) {
 
