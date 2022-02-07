@@ -6,11 +6,13 @@ auth0EventEmitter.addEventListener("ready", () => {
 let buckets = document.getElementsByClassName("populate-w-data");
 
 let updateTaskButtons = document.getElementsByClassName("event_task_updated");
-console.log(updateTaskButtons)
+
 for (let i = 0; i < updateTaskButtons.length; i++) {
-  console.log('updateTaskButtons')
+
   console.log(updateTaskButtons[i].closest('.task-update-form-container').previousSibling)
-  updateTaskButtons[i].onclick = function () {
+
+  let button = updateTaskButtons[i]
+  button.onclick = function () {
     console.log('click')
     updateTaskButtons[i].closest('.task-update-form-container').previousSibling.click();
   }
