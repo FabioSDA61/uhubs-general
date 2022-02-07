@@ -137,6 +137,8 @@ function handleUpdate () {
                 } else {
                   buckets[i].querySelector(classNameTaskIteration).href = data;
                 }
+
+                buckets[i].querySelector(classNameTaskIteration).closest('.task-update-form-container').previousSibling.click();
             });
           }
         }
