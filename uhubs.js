@@ -9,10 +9,10 @@ let updateTaskButtons = document.getElementsByClassName("event_task_updated");
 console.log(updateTaskButtons)
 for (let i = 0; i < updateTaskButtons.length; i++) {
   console.log('updateTaskButtons')
-  console.log(updateTaskButtons[i].closest('.close-icon'))
+  console.log(updateTaskButtons[i].closest('.task-update-form-container').previousSibling)
   updateTaskButtons[i].onclick = function () {
     console.log('click')
-    updateTaskButtons[i].closest('.close-icon').click();
+    updateTaskButtons[i].closest('.task-update-form-container').previousSibling.click();
   }
 
 }
