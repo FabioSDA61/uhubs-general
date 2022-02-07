@@ -100,6 +100,8 @@ function handleUpdate () {
           buckets[i].querySelector('.bucket-order').innerHTML = buckets[i].querySelector('.bucket-order-input').value
           buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
           buckets[i].querySelector('.bucket-color').style.backgroundColor = buckets[i].querySelector('.bucket-color-input').value
+
+          buckets[i].closest('.bucket-info-form').previousSibling.click();
   
       };
   
