@@ -12,6 +12,7 @@ for (let i = 0; i < updateTaskButtons.length; i++) {
   console.log(updateTaskButtons[i].closest('.task-update-form-container').previousSibling)
 
   let button = updateTaskButtons[i]
+  console.log(button)
   button.onclick = function () {
     console.log('click')
     updateTaskButtons[i].closest('.task-update-form-container').previousSibling.click();
