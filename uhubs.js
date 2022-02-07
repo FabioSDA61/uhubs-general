@@ -5,7 +5,19 @@ auth0EventEmitter.addEventListener("ready", () => {
 // get all buckets
 let buckets = document.getElementsByClassName("populate-w-data");
 
-//If statement to dinstinguish between manager and team member 
+let updateTaskButtons = document.getElementsByClassName("event_task_updated");
+
+for (let i = 0; i < updateTaskButtons.length; i++) {
+
+  updateTaskButtons[i].onclick = function () {
+    updateTaskButtons[i].closest('.close-icon').click();
+  }
+
+}
+
+
+
+
 
 //Sort buckets by order Position
 function sortBuckets() {
