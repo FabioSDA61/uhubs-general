@@ -8,8 +8,9 @@ let buckets = document.getElementsByClassName("populate-w-data");
 let updateTaskButtons = document.getElementsByClassName("event_task_updated");
 
 for (let i = 0; i < updateTaskButtons.length; i++) {
-
+  console.log('updateTaskButtons')
   updateTaskButtons[i].onclick = function () {
+    console.log('click')
     updateTaskButtons[i].closest('.close-icon').click();
   }
 
