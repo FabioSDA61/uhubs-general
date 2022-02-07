@@ -5,24 +5,6 @@ auth0EventEmitter.addEventListener("ready", () => {
 // get all buckets
 let buckets = document.getElementsByClassName("populate-w-data");
 
-let updateTaskButtons = document.getElementsByClassName("event_task_updated");
-
-for (let i = 0; i < updateTaskButtons.length; i++) {
-  let button = updateTaskButtons[i]
-  let close = button.closest('.task-update-form-container').previousSibling
-  function closeForm() {
-    console.log('click')
-    close.click();
-  }
- 
-  button.onclick = function () {
-    closeForm();
-  }
-
-}
-
-
-
 
 
 //Sort buckets by order Position
