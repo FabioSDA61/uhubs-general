@@ -8,14 +8,15 @@ let buckets = document.getElementsByClassName("populate-w-data");
 let updateTaskButtons = document.getElementsByClassName("event_task_updated");
 
 for (let i = 0; i < updateTaskButtons.length; i++) {
-
-  console.log(updateTaskButtons[i].closest('.task-update-form-container').previousSibling)
-
   let button = updateTaskButtons[i]
-  console.log(button)
-  button.onclick = function () {
+  let close = button.closest('.task-update-form-container').previousSibling
+  function closeForm() {
     console.log('click')
-    updateTaskButtons[i].closest('.task-update-form-container').previousSibling.click();
+    close.click();
+  }
+ 
+  button.onclick = function () {
+    closeForm();
   }
 
 }
