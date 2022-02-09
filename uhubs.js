@@ -62,16 +62,19 @@ if (isManager) {
 
     //enable team member assignment on every bucket    
     for (var i = 0; i < buckets.length; i++) {
-        //console.log(buckets[i].querySelector('.assigned-members-container'));
+        console.log(buckets[i].querySelector('.assigned-members-container'));
+
 
 
         // ------------ Bucket Element Start
         function sortAssignmentsForAllBuckets() {
+          
         
             // bucket state
             const bucket = buckets[i]
             let assignedList = bucket.querySelector('.assigned-team-members').value ? bucket.querySelector('.assigned-team-members').value.split(', ') : [];
             let notAssignedList = [];
+            
         
 
             // Bucket-scope elements
@@ -83,7 +86,6 @@ if (isManager) {
 
             const hiddenInput = bucket.querySelector('.assigned-input');
 
-
             
 
             //add not assignement members to noAssignedList
@@ -92,6 +94,9 @@ if (isManager) {
                     notAssignedList.push(allMembers[a])
                 }
             }
+
+            console.log(assignedList);
+            console.log(notAssignedList);
 
             //toggle assign-all button of and delete-all on if all members are already invited
             function toggleManageAllButtons() {
