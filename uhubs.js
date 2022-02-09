@@ -42,7 +42,7 @@ if (isManager) {
 
 //--------------------------------------------------------------------- Manager code wrapper
 
-  function bucketMemberAssignment() {
+  function assignTeamMembers() {
 
 
     // global info 
@@ -254,7 +254,7 @@ if (isManager) {
     }
   }
 
-  bucketMemberAssignment();
+  assignTeamMembers();
 
  // Populate the update forms of tasks and buckets with the according data
   for (let i = 0; i < buckets.length; i++) {
