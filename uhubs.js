@@ -74,7 +74,7 @@ if (isManager) {
         
             // bucket state
             const bucket = buckets[i]
-            let assignedList = bucket.querySelector('.assigned-team-members').value ? bucket.querySelector('.assigned-team-members').value.split(', ') : [];
+            let assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
             let notAssignedList = [];
             
         
