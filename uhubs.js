@@ -109,13 +109,16 @@ if (isManager) {
             //toggle assign-all button of and delete-all on if all members are already invited
             function toggleManageAllButtons() {
                         
-                if (assignedList.length == allMembers.length) {    
+                if (assignedList.length == allMembers.length) { 
+                    console.log('toggling')   
                     toggle(removeAllButton, 'on')
                     toggle(assignAllButton, 'off') 
                 } else if (assignedList.length == 0) {
+                    console.log('toggling')
                     toggle(removeAllButton, 'off')
                     toggle(assignAllButton, 'on') 
                 } else {
+                  console.log('toggling')
                     toggle(assignAllButton, 'off')
                 }
             }
