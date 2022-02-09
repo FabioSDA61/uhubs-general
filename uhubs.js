@@ -50,8 +50,10 @@ if (isManager) {
     let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
     for (var i = 0; i < hiddenEmails.length; i++) {
-        allMembers.push(hiddenEmails[i])
+        allMembers.push(hiddenEmails[i].innerText)
     }
+
+  
 
     //global functions
     function toggle(el, bool) {
