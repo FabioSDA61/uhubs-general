@@ -46,7 +46,7 @@ if (isManager) {
 
 
     // global info 
-    const buckets = document.getElementsByClassName('bucket')
+    const buckets = document.getElementsByClassName('populate-w-data')
     let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
     for (var i = 0; i < hiddenEmails.length; i++) {
@@ -65,7 +65,8 @@ if (isManager) {
     //enable team member assignment on every bucket    
     for (var i = 0; i < buckets.length; i++) {
        // console.log(buckets[i].querySelector('.assigned-members-container'));
-
+       console.log(buckets.length)
+       console.log(buckets.length)
 
 
         // ------------ Bucket Element Start
