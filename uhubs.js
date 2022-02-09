@@ -75,8 +75,8 @@ if (isManager) {
         
 
             // Bucket-scope elements
-            const assignAllButton = bucket.querySelector('.assign-button');
-            const removeAllButton = bucket.querySelector('.remove-button');
+            const assignAllButton = bucket.querySelector('.assign-all-button');
+            const removeAllButton = bucket.querySelector('.remove-all-button');
 
             const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
             const allMembersContainer = bucket.querySelector('.all-members-container');
