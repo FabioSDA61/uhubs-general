@@ -64,7 +64,7 @@ if (isManager) {
 
     //enable team member assignment on every bucket    
     for (var i = 0; i < buckets.length; i++) {
-        console.log(buckets[i].querySelector('.assigned-members-container'));
+       // console.log(buckets[i].querySelector('.assigned-members-container'));
 
 
 
@@ -86,6 +86,8 @@ if (isManager) {
             // Bucket-scope elements
             const assignAllButton = bucket.querySelector('.assign-all-button');
             const removeAllButton = bucket.querySelector('.remove-all-button');
+            console.log(assignAllButton)
+            console.log(removeAllButton)
 
             const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
             const allMembersContainer = bucket.querySelector('.all-members-container');
