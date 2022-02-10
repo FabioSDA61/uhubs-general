@@ -45,7 +45,7 @@ if (isManager) {
   function assignTeamMembers() {
 
 
-    // global info 
+    // info 
     const buckets = document.getElementsByClassName('populate-w-data edit-view')
     let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
@@ -55,7 +55,7 @@ if (isManager) {
 
   
 
-    //global functions
+    // functions
     function toggle(el, bool) {
         el.style.display = bool == 'on' ? 'block' : 'none';
     }
