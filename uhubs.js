@@ -3,7 +3,7 @@ auth0EventEmitter.addEventListener("ready", () => {
 
 
 // get all buckets
-let buckets = document.getElementsByClassName("populate-w-data");
+let buckets = document.getElementsByClassName("bucket");
 
 
 
@@ -46,7 +46,7 @@ if (isManager) {
 
 
     // global info 
-    const buckets = document.getElementsByClassName('populate-w-data')
+    const buckets = document.getElementsByClassName('populate-w-data edit-view')
     let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
     for (var i = 0; i < hiddenEmails.length; i++) {
