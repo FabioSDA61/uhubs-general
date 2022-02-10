@@ -90,10 +90,16 @@ if (isManager) {
             console.log(assignAllButton)
             console.log(removeAllButton)
 
-            const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
-            const allMembersContainer = bucket.querySelector('.all-members-container');
 
+            //bucket-info show assigned members
+            const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
+            console.log(assignedMembersContainer)
+            //bucket-form-trigger assign and remove members
+            const allMembersContainer = bucket.querySelector('.all-members-container');
+            console.log(allMembersContainer)
+            //bucket-form-target
             const hiddenInput = bucket.querySelector('.assigned-input');
+            console.log(hiddenInput)
 
             
 
