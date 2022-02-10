@@ -41,7 +41,7 @@ const isManager = metadata.app.role == 'Manager'? true : false;
 if (isManager) {
 
 //--------------------------------------------------------------------- Manager code wrapper
-
+/*
   function assignTeamMembers() {
 
 
@@ -276,9 +276,8 @@ if (isManager) {
         
     }
   }
-
   assignTeamMembers();
-
+*/
  // Populate the update forms of tasks and buckets with the according data
   for (let i = 0; i < buckets.length; i++) {
     ['.bucket-name',
