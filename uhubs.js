@@ -45,10 +45,7 @@ if (isManager) {
 
 
  // global info 
- let managerBuckets = document.getElementsByClassName('edit-view-bucket');
- console.log('buckets.length:')
- console.log(managerBuckets.length) 
- console.log('buckets')
+ let managerBuckets = document.querySelectorAll('.edit-view-bucket');
  let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
     for (var i = 0; i < hiddenEmails.length; i++) {
@@ -62,17 +59,17 @@ if (isManager) {
      el.style.display = bool == 'on' ? 'block' : 'none';
  }
 
- 
-
  console.log('managerBuckets')
- console.log(managerBuckets.length)
+  console.log(managerBuckets.length)
+  console.log(managerBuckets)
+
+ 
  //enable team member assignment on every bucket    
  for (var n = 0; n < managerBuckets.length; n++) {
   console.log('iteration')
   console.log(n)
 
-  console.log('managerBuckets')
-  console.log(managerBuckets.length)
+  
      //console.log(buckets[i].querySelector('.assigned-members-container'));
 
 
