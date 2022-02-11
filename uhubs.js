@@ -150,7 +150,7 @@ if (isManager) {
                  for (var b = 0; b < assignedList.length; b++) {
                      let childNode = document.createElement("p")
                      childNode.className = 'paragraph small no-margin _12px opaque50';
-                    childNode.style.marginBottom = '10px';
+                    childNode.style.marginBottom = '5px';
                      childNode.innerText = assignedList[b]
                      assignedMembersContainer.appendChild(childNode);
                  }
@@ -184,7 +184,7 @@ if (isManager) {
              for (var b = 0; b < assignedList.length; b++) {
                  let childNode = document.createElement("p")
                  childNode.className = 'paragraph small no-margin _12px opaque50';
-                 childNode.style.marginBottom = '10px';
+                 childNode.style.marginBottom = '5px';
                  childNode.innerText = assignedList[b]
                  assignedMembersContainer.appendChild(childNode);
              }
@@ -225,7 +225,7 @@ if (isManager) {
              for (var i = 0; i < assignedList.length; i++) {
                  let childNode = document.createElement("p")
                  childNode.className = 'paragraph small no-margin _12px opaque50';
-                 childNode.style.marginBottom = '10px';
+                 childNode.style.marginBottom = '5px';
                  childNode.innerText = assignedList[i]
                  assignedMembersContainer.appendChild(childNode);
              }
@@ -276,7 +276,7 @@ if (isManager) {
   
              let childNode = document.createElement("p")
              childNode.className = 'paragraph small no-margin _12px opaque50';
-              childNode.style.marginBottom = '10px';
+              childNode.style.marginBottom = '5px';
              childNode.innerText = assignedList[b]
              assignedMembersContainer.appendChild(childNode);
              
