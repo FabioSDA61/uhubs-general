@@ -80,20 +80,17 @@ if (isManager) {
          const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
          const allMembersContainer = bucket.querySelector('.all-members-container');
          const hiddenInput = bucket.querySelector('.assigned-input');
-
-         
-
-
-         
-
          //add not assignement members to noAssignedList
          for (var a = 0; a < allMembers.length; a++) {
              if (!assignedList.includes(allMembers[a])) {
                  notAssignedList.push(allMembers[a])
              }
          }
-
+         console.log('allMembers:')
+         console.log(allMembers)
+         console.log('assignedList:')
          console.log(assignedList)
+         console.log('notAssignedList:')
          console.log(notAssignedList)
 
          //toggle assign-all button of and delete-all on if all members are already invited
