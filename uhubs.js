@@ -72,6 +72,7 @@ if (isManager) {
 
      // ------------ Bucket Element Start
      function sortAssignmentsForAllBuckets() {
+      console.log(sortAssignmentsForAllBuckets())
      
          // bucket state
          const bucket = buckets[i]
