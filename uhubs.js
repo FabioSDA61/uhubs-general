@@ -45,7 +45,7 @@ if (isManager) {
 
 
  // global info 
- const managerBuckets = document.getElementsByClassName('edit-view-bucket')   
+ let managerBuckets = document.getElementsByClassName('edit-view-bucket');
  console.log('buckets.length:')
  console.log(managerBuckets.length) 
  console.log('buckets')
@@ -67,9 +67,9 @@ if (isManager) {
  console.log('managerBuckets')
  console.log(managerBuckets.length)
  //enable team member assignment on every bucket    
- for (var z = 0; z < managerBuckets.length; z++) {
+ for (var n = 0; n < managerBuckets.length; n++) {
   console.log('iteration')
-  console.log(z)
+  console.log(n)
 
   console.log('managerBuckets')
   console.log(managerBuckets.length)
@@ -80,7 +80,7 @@ if (isManager) {
       console.log('sortAssignmentsForAllBuckets()')
      
          // bucket state
-         const bucket = managerBuckets[z]
+         const bucket = managerBuckets[n]
          if (bucket.querySelector('.assigned-team-members')) {
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
         } 
