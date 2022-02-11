@@ -1,8 +1,6 @@
 auth0EventEmitter.addEventListener("ready", () => {
 //start auth0 Eventemitter Wrap  
 
-  console.log(' auth ready')
-
 
 
 // get all buckets
@@ -45,12 +43,11 @@ const isManager = metadata.app.role == 'Manager'? true : false;
 
 if (isManager) {
 
-  console.log('this is a manager')
+
 
 
 
 function teamMemberBucketAssignment() {
-  console.log('teamMemberBucketAssignment')
  // global info 
  let managerBuckets = document.querySelectorAll('.edit-view-bucket');
  let allMembers = [];
@@ -60,18 +57,11 @@ function teamMemberBucketAssignment() {
         allMembers.push(email);
     }
 
- console.log('managerBuckets')
-  console.log(managerBuckets.length)
-  console.log(managerBuckets)
 
-  for (var n = 0; n < managerBuckets.length; n++) {
-    console.log('control')
-  }
  
  //enable team member assignment on every bucket    
  for (var n = 0; n < managerBuckets.length; n++) {
-  console.log('iteration')
-  console.log(n)
+
 
      
          // bucket state
