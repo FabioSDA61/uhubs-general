@@ -67,7 +67,7 @@ if (isManager) {
  console.log('managerBuckets')
  console.log(managerBuckets.length)
  //enable team member assignment on every bucket    
- for (var z = 0; 2 < managerBuckets.length; z++) {
+ for (var z = 0; 2 > managerBuckets.length; z++) {
   console.log('iteration')
   console.log(z)
 
