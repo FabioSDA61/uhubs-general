@@ -74,7 +74,7 @@ if (isManager) {
 
 
      // ------------ Bucket Element Start
-     function sortAssignmentsForAllBuckets() {
+     function sortBucketAssignments() {
       console.log('sortAssignmentsForAllBuckets()')
      
          // bucket state
@@ -289,7 +289,7 @@ if (isManager) {
      }
      // ------------ Bucket Element End
 
-     sortAssignmentsForAllBuckets();       
+     sortBucketAssignments();       
      
  }
 
