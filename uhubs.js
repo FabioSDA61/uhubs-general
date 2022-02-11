@@ -194,6 +194,7 @@ if (isManager) {
 
          function updateItem (element, id) {
              let isAssigned = assignedList.includes(element.id);
+             console.log('update')
              console.log(element)
 
              if (isAssigned) {
