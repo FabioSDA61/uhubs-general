@@ -256,14 +256,19 @@ if (isManager) {
          //initialPopulation
 
          for (let d = 0; d < assignedList.length; d++) {
+          console.log('assignedList.length:')
+          console.log(assignedList.length)
              createMemberToggler(assignedList[d]);
          }
 
          for (let d = 0; d < notAssignedList.length; d++) {
+          console.log('notAssignedList.length:')
+          console.log(notAssignedList.length)
              createMemberToggler(notAssignedList[d]);
          }
 
          for (var b = 0; b < assignedList.length; b++) {
+  
              let childNode = document.createElement("p")
              childNode.className = 'paragraph small no-margin _12px opaque50';
               childNode.style.marginBottom = '10px';
