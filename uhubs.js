@@ -41,243 +41,221 @@ const isManager = metadata.app.role == 'Manager'? true : false;
 if (isManager) {
 
 //--------------------------------------------------------------------- Manager code wrapper
-/*
-  function assignTeamMembers() {
+ // global info 
+ const buckets = document.getElementsByClassName('bucket')    
+ let allMembers = document.getElementById('all-members').innerHTML.split(', ');
 
+ //global functions
+ function toggle(el, bool) {
+     el.style.display = bool == 'on' ? 'block' : 'none';
+ }
 
-    // info 
-    const buckets = document.getElementsByClassName('populate-w-data edit-view')
-    let allMembers = [];
-    let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
-    for (var i = 0; i < hiddenEmails.length; i++) {
-        allMembers.push(hiddenEmails[i].innerText)
-    }
-
-  
-
-    // functions
-    function toggle(el, bool) {
-        el.style.display = bool == 'on' ? 'block' : 'none';
-    }
+ 
 
 
 
-    //enable team member assignment on every bucket    
-    for (var i = 0; i < buckets.length; i++) {
-       // console.log(buckets[i].querySelector('.assigned-members-container'));
-       console.log(buckets)
-       console.log(buckets.length)
+ //enable team member assignment on every bucket    
+ for (var i = 0; i < buckets.length; i++) {
+     //console.log(buckets[i].querySelector('.assigned-members-container'));
 
 
-        // ------------ Bucket Element Start
-        function sortAssignmentsForAllBuckets() {
-          
-        
-            // bucket state
-            const bucket = buckets[i]
-            let assignedList = [];
-            if (bucket.querySelector('.assigned-team-members')) {
-              assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
-            } 
-            
-            let notAssignedList = [];
-            
-        
-
-            // Bucket-scope elements
-            const assignAllButton = bucket.querySelector('.assign-all-button');
-            const removeAllButton = bucket.querySelector('.remove-all-button');
-            console.log(assignAllButton)
-            console.log(removeAllButton)
+     // ------------ Bucket Element Start
+     function sortAssignmentsForAllBuckets() {
+     
+         // bucket state
+         const bucket = buckets[i]
+         let assignedList = bucket.querySelector('.assigned-input').value ? bucket.querySelector('.assigned-input').value.split(', ') : [];
+         let notAssignedList = [];
+         const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
+         const allMembersContainer = bucket.querySelector('.all-members-container');
+         const hiddenInput = bucket.querySelector('.assigned-input');
 
 
-            //bucket-info show assigned members
-            const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
-            console.log(assignedMembersContainer)
-            //bucket-form-trigger assign and remove members
-            const allMembersContainer = bucket.querySelector('.all-members-container');
-            console.log(allMembersContainer)
-            //bucket-form-target
-            const hiddenInput = bucket.querySelector('.assigned-input');
-            console.log(hiddenInput)
+         
 
-            
+         //add not assignement members to noAssignedList
+         for (var a = 0; a < allMembers.length; a++) {
+             if (!assignedList.includes(allMembers[a])) {
+                 notAssignedList.push(allMembers[a])
+             }
+         }
 
-            //add not assignement members to noAssignedList
-            for (var a = 0; a < allMembers.length; a++) {
-                if (!assignedList.includes(allMembers[a])) {
-                    notAssignedList.push(allMembers[a])
-                }
-            }
+         //toggle assign-all button of and delete-all on if all members are already invited
+         function toggleAll() {
+             if (assignedList.length == allMembers.length) {
+                 removeAll();
+             } else {
+                 assignAll();
+             }
+         }
 
-            console.log(assignedList);
-            console.log(notAssignedList);
+         function createToggleAllButton(){
 
-            //toggle assign-all button of and delete-all on if all members are already invited
-            function toggleManageAllButtons() {
-                        
-                if (assignedList.length == allMembers.length) { 
-                    console.log('toggling')   
-                    toggle(removeAllButton, 'on')
-                    toggle(assignAllButton, 'off') 
-                } else if (assignedList.length == 0) {
-                    console.log('toggling')
-                    toggle(removeAllButton, 'off')
-                    toggle(assignAllButton, 'on') 
-                } else {
-                  console.log('toggling')
-                    toggle(assignAllButton, 'off')
-                }
-            }
+             let toggleAllButton = bucket.querySelector('.toggle-all-button');
+             console.log(toggleAllButton)
+                 if (toggleAllButton) { toggleAllButton.remove()};
+
+             let childNode = document.createElement('input');
+             childNode.type = "checkbox"
+             childNode.className = 'toggle-all-button'
+             childNode.checked =  assignedList.length == allMembers.length ? true : false;
+             childNode.onclick = function (){ 
+                 toggleAll();
+             }
+             bucket.querySelector('.toggle-all-container').appendChild(childNode);
+         }
+         createToggleAllButton();
+         let toggleAllButton = bucket.querySelector('.toggle-all-button');
 
 
-            function assignAll() {
+         function assignAll() {
 
-                    toggle(assignAllButton, 'off')
-                    toggle(removeAllButton, 'on')
+                 assignedList.push(...notAssignedList)
+                 notAssignedList = [];
 
-                    assignedList.push(...notAssignedList)
-                    notAssignedList = [];
+                 console.log('assigned: ' + assignedList);
+                 console.log('not assigned: ' + notAssignedList);
 
-                    assignedMembersContainer.innerHTML = '';
-                    allMembersContainer.innerHTML = '';
-                    hiddenInput.value = '';
-                    hiddenInput.value = assignedList.toString();
+                 assignedMembersContainer.innerHTML = '';
+                 allMembersContainer.innerHTML = '';
+                 hiddenInput.value = '';
+                 hiddenInput.value = assignedList.toString();
 
-                    for (let a = 0; a < assignedList.length; a++) {
-                        let childNode = document.createElement("p")
-                        childNode.style.color = "green"
-                        childNode.innerText = assignedList[a]
-                        childNode.className = "member assigned"
-                        childNode.id = assignedList[a]
-                        childNode.onclick = function (){ 
-                            updateItem(this);
-                        }
-                        assignedMembersContainer.appendChild(childNode);
-                }
-            }
-
-            function removeAll() {
-                toggle(removeAllButton, 'off')
-                toggle(assignAllButton, 'on')
+                 for (let d = 0; d < assignedList.length; d++) {
+                     createMemberToggler(assignedList[d]);
+                 }
 
 
-                notAssignedList.push(...assignedList)
-                assignedList= [];
+                 for (var b = 0; b < assignedList.length; b++) {
+                     let childNode = document.createElement("p")
+                     childNode.innerText = assignedList[b]
+                     assignedMembersContainer.appendChild(childNode);
+                 }
 
-                bucket.querySelector('.assigned-members-container');
+                 createToggleAllButton();
+         }
 
-                assignedMembersContainer.innerHTML = '';
-                allMembersContainer.innerHTML = '';
-                hiddenInput.value = '';
-                hiddenInput.value = assignedList.toString();
+         function removeAll() {
 
-                for (let c = 0; c < notAssignedList.length; c++) {
-                    let childNode = document.createElement("p")
-                    childNode.style.color = "red"
-                    childNode.innerText = notAssignedList[c]
-                    childNode.className =  notAssignedList[c].split('@')[0]
-                    childNode.onclick = function (){ 
-                        updateItem(this);
-                    }
-                    allMembersContainer.appendChild(childNode);
-                }
-            }
+             notAssignedList.push(...assignedList)
+             assignedList= [];
 
-            function updateItem (element) {
+             console.log('assigned: ' + assignedList);
+             console.log('not assigned: ' + notAssignedList);
 
-                let isAssigned = assignedList.includes(element.innerText)
+             bucket.querySelector('.assigned-members-container');
 
+             assignedMembersContainer.innerHTML = '';
+             allMembersContainer.innerHTML = '';
+             hiddenInput.value = '';
+             hiddenInput.value = assignedList.toString();
 
-                if (isAssigned) {
-                    notAssignedList.push(element.innerText)
-                    const index = assignedList.indexOf(element.innerText);
-                    if (index > -1) {
-                        assignedList.splice(index, 1); 
-                }
-                    bucket.querySelector("." + element.className).style.color = "red";
-                } else {
-                    assignedList.push(element.innerText)
-                    const index = notAssignedList.indexOf(element.innerText);
-                    if (index > -1) {
-                        notAssignedList.splice(index, 1); 
-                    }
-                    bucket.querySelector("." + element.className).style.color = "green";
-                }
-                
-                assignedMembersContainer.innerHTML = '';
-                //allMembersContainer.innerHTML = '';
-                
-                hiddenInput.value = '';
-                hiddenInput.value = assignedList.toString();
-                
-                console.log('assigned: ' + assignedList);
-                console.log('not assigned: ' + notAssignedList);
-                
-                for (var i = 0; i < assignedList.length; i++) {
-                    let childNode = document.createElement("p")
-                    childNode.innerText = assignedList[i]
-                    assignedMembersContainer.appendChild(childNode);
-                }                
-                
+             for (let d = 0; d < notAssignedList.length; d++) {
+                 createMemberToggler(notAssignedList[d]);
+                 }
 
-            }
+             for (let d = 0; d < assignedList.length; d++) {
+                 createMemberToggler(assignedList[d]);
+             }
+
+             for (var b = 0; b < assignedList.length; b++) {
+                 let childNode = document.createElement("p")
+                 childNode.innerText = assignedList[b]
+                 assignedMembersContainer.appendChild(childNode);
+             }
+
+             createToggleAllButton();
+         }
 
 
 
-            toggleManageAllButtons();
+         function updateItem (element, id) {
+             let isAssigned = assignedList.includes(element.id);
+             console.log(element)
 
-            //initial population with (if existend) assigned members
-            for (let d = 0; d < assignedList.length; d++) {
-                let childNode = document.createElement("p")
-                childNode.style.color = "green"
-                childNode.innerText = assignedList[d]
-                childNode.className = assignedList[d].split('@')[0]
-                childNode.onclick = function (){ 
-                    updateItem(this);
-                }
-                allMembersContainer.appendChild(childNode);
-            }
+             if (isAssigned) {
+                 notAssignedList.push(element.id)
+                 const index = assignedList.indexOf(element.id);
+                 if (index > -1) {
+                     assignedList.splice(index, 1); 
+                 }
+             } else {
+                 assignedList.push(element.id)
+                 const index = notAssignedList.indexOf(element.id);
+                 if (index > -1) {
+                     notAssignedList.splice(index, 1); 
+                 }
+             }
 
-            for (var b = 0; b < assignedList.length; b++) {
-                let childNode = document.createElement("p")
-                childNode.innerText = assignedList[b]
-                assignedMembersContainer.appendChild(childNode);
-                
-            }
+             assignedMembersContainer.innerHTML = '';
+             //allMembersContainer.innerHTML = '';
 
-            for (let c = 0; c < notAssignedList.length; c++) {
-                let childNode = document.createElement("p")
-                childNode.style.color = "red"
-                childNode.innerText = notAssignedList[c]
-                childNode.className = notAssignedList[c].split('@')[0]
-            
-                childNode.onclick = function (){ 
-                    updateItem(this);
-                }
-                allMembersContainer.appendChild(childNode);
-            }
+             hiddenInput.value = '';
+             hiddenInput.value = assignedList.toString();
 
+             console.log('assigned: ' + assignedList);
+             console.log('not assigned: ' + notAssignedList);
 
-            removeAllButton.onclick = function (){ 
-                removeAll();
-            }
-
-            assignAllButton.onclick = function (){ 
-                assignAll();
-            }
+             for (var i = 0; i < assignedList.length; i++) {
+                 let childNode = document.createElement("p")
+                 childNode.innerText = assignedList[i]
+                 assignedMembersContainer.appendChild(childNode);
+             }
+             createToggleAllButton();                
+         }
 
 
-            
-        }
-        // ------------ Bucket Element End
+         function createMemberToggler(email){
+             let name = email.split('@')[0];
 
-        sortAssignmentsForAllBuckets();       
-        
-    }
-  }
-  assignTeamMembers();
-*/
+             let containerChildNode = document.createElement('div');
+             containerChildNode.className = name + '-container member-toggler-container';
+
+             let checkboxChildNode = document.createElement('input');
+             checkboxChildNode.type = "checkbox"
+             checkboxChildNode.className = name
+             checkboxChildNode.id = email
+             checkboxChildNode.checked =  assignedList.includes(email)
+             checkboxChildNode.onclick = function (){ 
+                 updateItem(this);
+             }
+             containerChildNode.appendChild(checkboxChildNode);
+
+             let childNodeText = document.createElement('p');                       
+             childNodeText.innerText = email
+             childNodeText.style.paddingLeft = '10px'
+             containerChildNode.appendChild(childNodeText);
+
+             allMembersContainer.appendChild(containerChildNode);
+         }
+
+         //initialPopulation
+
+         for (let d = 0; d < assignedList.length; d++) {
+             createMemberToggler(assignedList[d]);
+         }
+
+         for (let d = 0; d < notAssignedList.length; d++) {
+             createMemberToggler(notAssignedList[d]);
+         }
+
+         for (var b = 0; b < assignedList.length; b++) {
+             let childNode = document.createElement("p")
+             childNode.innerText = assignedList[b]
+             assignedMembersContainer.appendChild(childNode);
+             
+         }
+         
+
+
+         
+     }
+     // ------------ Bucket Element End
+
+     sortAssignmentsForAllBuckets();       
+     
+ }
+
  // Populate the update forms of tasks and buckets with the according data
   for (let i = 0; i < buckets.length; i++) {
     ['.bucket-name',
