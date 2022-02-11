@@ -8,6 +8,7 @@ const buckets = document.getElementsByClassName("bucket");
 
 
 
+
 //Sort buckets by order Position
 
 function sortBuckets() {
@@ -57,6 +58,7 @@ function teamMemberBucketAssignment() {
         allMembers.push(email);
     }
 
+   
 
  
  //enable team member assignment on every bucket    
@@ -85,6 +87,14 @@ function teamMemberBucketAssignment() {
          console.log(assignedList)
          console.log('notAssignedList:')
          console.log(notAssignedList)
+
+         bucket.querySelector('.assign-individually-trigger').onclick = function() {
+          bucket.querySelector('.assign-individually-target').click();
+         }
+         
+         
+         
+
 
          //toggle assign-all button of and delete-all on if all members are already invited
          function toggleAll() {
