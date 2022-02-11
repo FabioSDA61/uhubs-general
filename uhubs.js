@@ -45,7 +45,7 @@ if (isManager) {
 
 
  // global info 
- const buckets = document.getElementsByClassName('bucket edit-view')   
+ const buckets = document.getElementsByClassName('edit-view')   
  console.log('buckets.length:')
  console.log(buckets.length) 
  let allMembers = [];
@@ -72,7 +72,7 @@ if (isManager) {
 
      // ------------ Bucket Element Start
      function sortAssignmentsForAllBuckets() {
-      console.log(sortAssignmentsForAllBuckets())
+      console.log('sortAssignmentsForAllBuckets()')
      
          // bucket state
          const bucket = buckets[i]
