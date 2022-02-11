@@ -243,7 +243,8 @@ if (isManager) {
              }
              containerChildNode.appendChild(checkboxChildNode);
 
-             let childNodeText = document.createElement('p');                       
+             let childNodeText = document.createElement('p');   
+             childNodeText.className = 'paragraph small no-margin _12px opaque50';                    
              childNodeText.innerText = email
              childNodeText.style.paddingLeft = '10px'
              containerChildNode.appendChild(childNodeText);
