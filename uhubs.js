@@ -47,10 +47,10 @@ if (isManager) {
 
   console.log('this is a manager')
 
-//--------------------------------------------------------------------- Manager code wrapper
 
 
 function teamMemberBucketAssignment() {
+  console.log('teamMemberBucketAssignment')
  // global info 
  let managerBuckets = document.querySelectorAll('.edit-view-bucket');
  let allMembers = [];
@@ -277,9 +277,7 @@ function teamMemberBucketAssignment() {
              childNode.innerText = assignedList[b]
              assignedMembersContainer.appendChild(childNode);
              
-         }
-         
-     // ------------ Bucket Element End
+         }   
   }
 }
 
