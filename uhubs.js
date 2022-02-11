@@ -59,6 +59,9 @@ function teamMemberBucketAssignment() {
   console.log(managerBuckets.length)
   console.log(managerBuckets)
 
+  for (var n = 0; n < managerBuckets.length; n++) {
+    console.log('control')
+  }
  
  //enable team member assignment on every bucket    
  for (var n = 0; n < managerBuckets.length; n++) {
