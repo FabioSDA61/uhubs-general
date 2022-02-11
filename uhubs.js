@@ -49,8 +49,8 @@ if (isManager) {
  let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
     for (var i = 0; i < hiddenEmails.length; i++) {
-        let email = hiddenEmails[i].innerText 
-        allMembers.push(email)
+        let email = hiddenEmails[i].innerText;
+        allMembers.push(email);
     }
 
  //global functions
@@ -65,7 +65,7 @@ if (isManager) {
 
  
  //enable team member assignment on every bucket    
- for (var n = 2; n < managerBuckets.length; n++) {
+ for (var n = 1; n < managerBuckets.length; n++) {
   console.log('iteration')
   console.log(n)
 
@@ -283,10 +283,7 @@ if (isManager) {
          }
          
      // ------------ Bucket Element End
-
- 
-     
- }
+  }
 
 
  // Populate the update forms of tasks and buckets with the according data
