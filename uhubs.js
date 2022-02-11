@@ -65,7 +65,7 @@ function teamMemberBucketAssignment() {
  for (var n = 0; n < managerBuckets.length; n++) {
 
 
-     
+      //
          // bucket state
          const bucket = managerBuckets[n]
          if (bucket.querySelector('.assigned-team-members')) {
@@ -87,14 +87,7 @@ function teamMemberBucketAssignment() {
          console.log(assignedList)
          console.log('notAssignedList:')
          console.log(notAssignedList)
-
-         bucket.querySelector('.assign-individually-trigger').onclick = function() {
-          bucket.querySelector('.assign-individually-target').click();
-         }
-         
-         
-         
-
+    
 
          //toggle assign-all button of and delete-all on if all members are already invited
          function toggleAll() {
