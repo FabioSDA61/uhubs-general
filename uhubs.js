@@ -1,6 +1,9 @@
 auth0EventEmitter.addEventListener("ready", () => {
 //start auth0 Eventemitter Wrap  
 
+  console.log(' auth ready')
+
+
 
 // get all buckets
 const buckets = document.getElementsByClassName("bucket");
@@ -41,6 +44,8 @@ sortBuckets();
 const isManager = metadata.app.role == 'Manager'? true : false;
 
 if (isManager) {
+
+  console.log('this is a manager')
 
 //--------------------------------------------------------------------- Manager code wrapper
 
