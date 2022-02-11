@@ -3,7 +3,7 @@ auth0EventEmitter.addEventListener("ready", () => {
 
 
 // get all buckets
-let buckets = document.getElementsByClassName("bucket");
+const buckets = document.getElementsByClassName("bucket");
 
 
 
@@ -45,9 +45,9 @@ if (isManager) {
 
 
  // global info 
- const buckets = document.getElementsByClassName('edit-view-bucket')   
+ const managerBuckets = document.getElementsByClassName('edit-view-bucket')   
  console.log('buckets.length:')
- console.log(buckets.length) 
+ console.log(managerBuckets.length) 
  console.log('buckets')
  let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
@@ -65,9 +65,11 @@ if (isManager) {
  
 
 
-
+ console.log(managerBuckets.length)
  //enable team member assignment on every bucket    
- for (var i = 0; i < buckets.length; i++) {
+ for (var i = 0; i < managerBuckets.length; i++) {
+  console.log('iteration')
+  console.log(i)
      //console.log(buckets[i].querySelector('.assigned-members-container'));
 
 
@@ -76,7 +78,7 @@ if (isManager) {
       console.log('sortAssignmentsForAllBuckets()')
      
          // bucket state
-         const bucket = buckets[i]
+         const bucket = managerBuckets[i]
          if (bucket.querySelector('.assigned-team-members')) {
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
         } 
