@@ -64,12 +64,15 @@ if (isManager) {
 
  
 
-
+ console.log('managerBuckets')
  console.log(managerBuckets.length)
  //enable team member assignment on every bucket    
  for (var i = 0; i < managerBuckets.length; i++) {
   console.log('iteration')
   console.log(i)
+
+  console.log('managerBuckets')
+  console.log(managerBuckets.length)
      //console.log(buckets[i].querySelector('.assigned-members-container'));
 
 
