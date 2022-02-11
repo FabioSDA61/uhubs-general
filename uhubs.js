@@ -41,6 +41,9 @@ const isManager = metadata.app.role == 'Manager'? true : false;
 if (isManager) {
 
 //--------------------------------------------------------------------- Manager code wrapper
+
+
+/*
  // global info 
  const buckets = document.getElementsByClassName('bucket')    
  let allMembers = document.getElementById('all-members').innerHTML.split(', ');
@@ -255,6 +258,7 @@ if (isManager) {
      sortAssignmentsForAllBuckets();       
      
  }
+ */
 
  // Populate the update forms of tasks and buckets with the according data
   for (let i = 0; i < buckets.length; i++) {
