@@ -248,14 +248,10 @@ function teamMemberBucketAssignment() {
          //initialPopulation
 
          for (let d = 0; d < assignedList.length; d++) {
-          console.log('assignedList.length:')
-          console.log(assignedList.length)
              createMemberToggler(assignedList[d]);
          }
 
          for (let d = 0; d < notAssignedList.length; d++) {
-          console.log('notAssignedList.length:')
-          console.log(notAssignedList.length)
              createMemberToggler(notAssignedList[d]);
          }
 
