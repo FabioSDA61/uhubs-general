@@ -43,12 +43,16 @@ if (isManager) {
 //--------------------------------------------------------------------- Manager code wrapper
 
 
-/*
- // global info 
- const buckets = document.getElementsByClassName('bucket')    
- let allMembers = document.getElementById('all-members').innerHTML.split(', ');
 
+ // global info 
+ const buckets = document.getElementsByClassName('bucket edit-view')    
+ let allMembers = [];
+    let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
+    for (var i = 0; i < hiddenEmails.length; i++) {
+        allMembers.push(hiddenEmails[i].innerText)
+    }
  //global functions
+
  function toggle(el, bool) {
      el.style.display = bool == 'on' ? 'block' : 'none';
  }
@@ -67,11 +71,15 @@ if (isManager) {
      
          // bucket state
          const bucket = buckets[i]
-         let assignedList = bucket.querySelector('.assigned-input').value ? bucket.querySelector('.assigned-input').value.split(', ') : [];
+         if (bucket.querySelector('.assigned-team-members')) {
+          assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
+        } 
          let notAssignedList = [];
          const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
          const allMembersContainer = bucket.querySelector('.all-members-container');
          const hiddenInput = bucket.querySelector('.assigned-input');
+
+         console.log(assignedList)
 
 
          
@@ -258,7 +266,7 @@ if (isManager) {
      sortAssignmentsForAllBuckets();       
      
  }
- */
+
 
  // Populate the update forms of tasks and buckets with the according data
   for (let i = 0; i < buckets.length; i++) {
