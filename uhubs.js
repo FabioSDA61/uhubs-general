@@ -67,9 +67,9 @@ if (isManager) {
  console.log('managerBuckets')
  console.log(managerBuckets.length)
  //enable team member assignment on every bucket    
- for (var i = 0; i < managerBuckets.length; i++) {
+ for (var z = 0; z < managerBuckets.length; z++) {
   console.log('iteration')
-  console.log(i)
+  console.log(z)
 
   console.log('managerBuckets')
   console.log(managerBuckets.length)
@@ -80,7 +80,7 @@ if (isManager) {
       console.log('sortAssignmentsForAllBuckets()')
      
          // bucket state
-         const bucket = managerBuckets[i]
+         const bucket = managerBuckets[z]
          if (bucket.querySelector('.assigned-team-members')) {
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
         } 
