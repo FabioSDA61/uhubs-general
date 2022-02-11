@@ -52,7 +52,7 @@ if (isManager) {
         let email = hiddenEmails[i].innerText 
         allMembers.push(email)
     }
-  console.log(allMembers)
+
  //global functions
 
  function toggle(el, bool) {
@@ -81,7 +81,7 @@ if (isManager) {
          const allMembersContainer = bucket.querySelector('.all-members-container');
          const hiddenInput = bucket.querySelector('.assigned-input');
 
-         console.log(assignedList)
+         
 
 
          
@@ -92,6 +92,9 @@ if (isManager) {
                  notAssignedList.push(allMembers[a])
              }
          }
+
+         console.log(assignedList)
+         console.log(notAssignedList)
 
          //toggle assign-all button of and delete-all on if all members are already invited
          function toggleAll() {
