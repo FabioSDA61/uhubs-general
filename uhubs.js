@@ -8,7 +8,7 @@ const buckets = document.getElementsByClassName("bucket");
 
 
 //Sort buckets by order Position
-/*
+
 function sortBuckets() {
   const bucketWrappers = document.querySelectorAll('.bucketwrapper')
 
@@ -35,7 +35,7 @@ function sortBuckets() {
 }
 
 sortBuckets();
-*/
+
 
 
 const isManager = metadata.app.role == 'Manager'? true : false;
@@ -45,7 +45,7 @@ if (isManager) {
 //--------------------------------------------------------------------- Manager code wrapper
 
 
-
+function teamMemberBucketAssignment() {
  // global info 
  let managerBuckets = document.querySelectorAll('.edit-view-bucket');
  let allMembers = [];
@@ -273,6 +273,9 @@ if (isManager) {
          
      // ------------ Bucket Element End
   }
+}
+
+teamMemberBucketAssignment();
 
 
  // Populate the update forms of tasks and buckets with the according data
