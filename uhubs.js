@@ -98,7 +98,6 @@ function teamMemberBucketAssignment() {
          function createToggleAllButton(){
 
              let toggleAllButton = bucket.querySelector('.toggle-all-button');
-             console.log(toggleAllButton)
                  if (toggleAllButton) { toggleAllButton.remove()};
 
              let childNode = document.createElement('input');
