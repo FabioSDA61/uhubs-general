@@ -51,6 +51,7 @@ if (isManager) {
     for (var i = 0; i < hiddenEmails.length; i++) {
         allMembers.push(hiddenEmails[i].innerText)
     }
+  console.log('allMember List:' + allMembers)
  //global functions
 
  function toggle(el, bool) {
