@@ -8,6 +8,7 @@ const buckets = document.getElementsByClassName("bucket");
 
 
 //Sort buckets by order Position
+/*
 function sortBuckets() {
   const bucketWrappers = document.querySelectorAll('.bucketwrapper')
 
@@ -34,6 +35,7 @@ function sortBuckets() {
 }
 
 sortBuckets();
+*/
 
 
 const isManager = metadata.app.role == 'Manager'? true : false;
@@ -53,28 +55,16 @@ if (isManager) {
         allMembers.push(email);
     }
 
- //global functions
-
- function toggle(el, bool) {
-     el.style.display = bool == 'on' ? 'block' : 'none';
- }
-
  console.log('managerBuckets')
   console.log(managerBuckets.length)
   console.log(managerBuckets)
 
  
  //enable team member assignment on every bucket    
- for (var n = 1; n < managerBuckets.length; n++) {
+ for (var n = 0; n < managerBuckets.length; n++) {
   console.log('iteration')
   console.log(n)
 
-  
-     //console.log(buckets[i].querySelector('.assigned-members-container'));
-
-
-     // ------------ Bucket Element Start
-      console.log('sortAssignmentsForAllBuckets()')
      
          // bucket state
          const bucket = managerBuckets[n]
@@ -123,7 +113,6 @@ if (isManager) {
              bucket.querySelector('.toggle-all-container').appendChild(childNode);
          }
          createToggleAllButton();
-         let toggleAllButton = bucket.querySelector('.toggle-all-button');
 
 
          function assignAll() {
