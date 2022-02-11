@@ -45,7 +45,9 @@ if (isManager) {
 
 
  // global info 
- const buckets = document.getElementsByClassName('bucket edit-view')    
+ const buckets = document.getElementsByClassName('bucket edit-view')   
+ console.log('buckets.length:')
+ console.log(buckets.length) 
  let allMembers = [];
     let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
     for (var i = 0; i < hiddenEmails.length; i++) {
