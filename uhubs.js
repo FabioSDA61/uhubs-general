@@ -86,7 +86,6 @@ if (isManager) {
     function createToggleAllButton(){
 
         console.log(assignedList.length)
-        console.log(allMembersMails.length)
         console.log(assignedList.length == allMembers.length)
         console.log(allMembers)
 
