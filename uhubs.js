@@ -62,7 +62,7 @@ if (isManager) {
   function assignmentCreateBucket() {
 
     // bucket state
-    const bucket = bucket.querySelector('.bucket-create-form')
+    const bucket = document.querySelector('.bucket-create-form')
     let assignedList = [];
     /*
     if (bucket.querySelector('.assigned-team-members')) {
