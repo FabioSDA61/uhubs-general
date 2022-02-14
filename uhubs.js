@@ -68,7 +68,7 @@ if (isManager) {
     if (bucket.querySelector('.assigned-team-members')) {
      assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
    } */
-    let notAssignedList = [];
+    let notAssignedList = allMembers;
     const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
     const allMembersContainer = bucket.querySelector('.all-members-container');
     const hiddenInput = bucket.querySelector('.assigned-input');
