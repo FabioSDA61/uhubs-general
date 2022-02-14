@@ -264,9 +264,10 @@ assignmentCreateBucket();
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
         } 
          let notAssignedList = [];
-         const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
-         const allMembersContainer = bucket.querySelector('.all-members-container');
-         const hiddenInput = bucket.querySelector('.assigned-input');
+         let assignedMembersContainer = bucket.querySelector('.assigned-members-container');
+         let allMembersContainer = bucket.querySelector('.all-members-container');
+         let hiddenInputAssigned = bucket.querySelector('.assigned-input');
+         let hiddenInputUnassigned = bucket.querySelector('.unassigned-input');
          //add not assignement members to noAssignedList
          for (var a = 0; a < allMembers.length; a++) {
              if (!assignedList.includes(allMembers[a])) {
@@ -334,8 +335,11 @@ assignmentCreateBucket();
 
                  assignedMembersContainer.innerHTML = '';
                  allMembersContainer.innerHTML = '';
-                 hiddenInput.value = '';
-                 hiddenInput.value = assignedList.join(', ')
+
+                 hiddenInputAssigned.value = '';
+                 hiddenInputAssigned.value = assignedList.join(', ')
+                 hiddenInputUnassigned.value = '';
+                 hiddenInputUnassigned.value = notAssignedList.join(', ')
 
                  for (let d = 0; d < assignedList.length; d++) {
                      createMemberToggler(assignedList[d]);
@@ -372,8 +376,11 @@ assignmentCreateBucket();
 
              assignedMembersContainer.innerHTML = '';
              allMembersContainer.innerHTML = '';
-             hiddenInput.value = '';
-             hiddenInput.value = assignedList.join(', ')
+    
+             hiddenInputAssigned.value = '';
+             hiddenInputAssigned.value = assignedList.join(', ')
+             hiddenInputUnassigned.value = '';
+             hiddenInputUnassigned.value = notAssignedList.join(', ')
 
              for (let d = 0; d < notAssignedList.length; d++) {
                  createMemberToggler(notAssignedList[d]);
@@ -422,8 +429,10 @@ assignmentCreateBucket();
              assignedMembersContainer.innerHTML = '';
              //allMembersContainer.innerHTML = '';
 
-             hiddenInput.value = '';
-             hiddenInput.value = assignedList.join(', ')
+             hiddenInputAssigned.value = '';
+             hiddenInputAssigned.value = assignedList.join(', ')
+             hiddenInputUnassigned.value = '';
+             hiddenInputUnassigned.value = notAssignedList.join(', ')
 
              console.log('assigned: ');
                 console.log(assignedList);
@@ -477,7 +486,8 @@ assignmentCreateBucket();
 
          //initialPopulation
 
-         hiddenInput.value = assignedList.join(', ');
+         hiddenInputAssigned.value = assignedList.join(', ');
+         hiddenInputUnassigned.value = notAssignedList.join(', ');
 
          for (let d = 0; d < assignedList.length; d++) {
              createMemberToggler(assignedList[d]);
