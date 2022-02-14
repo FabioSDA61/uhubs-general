@@ -205,6 +205,8 @@ if (isManager) {
             assignedMembersContainer.appendChild(childNode);
         }
         */
+       console.log(assignedList)
+       console.log(notAssignedList)
     
         createToggleAllButton();                
     }
