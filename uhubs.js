@@ -51,14 +51,13 @@ if (isManager) {
 
  // global info 
  let managerBuckets = document.querySelectorAll('.edit-view-bucket');
- let allMembersMails = [];
+ let allMembers = [];
   let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
   for (var i = 0; i < hiddenEmails.length; i++) {
       let email = hiddenEmails[i].innerText;
-      allMembersMails.push(email);
+      allMembers.push(email);
   }
 
-  const allMembers = allMembersMails;
 
 
   function assignmentCreateBucket() {
@@ -66,23 +65,18 @@ if (isManager) {
     // bucket state
     const bucket = document.querySelector('.bucket-create-form')
     let assignedList = [];
-    /*
-    if (bucket.querySelector('.assigned-team-members')) {
-     assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
-   } */
+
     let notAssignedList = allMembers;
     let allMembersContainer = bucket.querySelector('.all-members-container');
     let hiddenInputAssigned = bucket.querySelector('.assigned-input');
     let hiddenInputUnassigned = bucket.querySelector('.unassigned-input');
-    //add not assignement members to noAssignedList
-
 
 
 
 
     //toggle assign-all button of and delete-all on if all members are already invited
     function toggleAll() {
-        if (assignedList.length == allMembersMails.length) {
+        if (assignedList.length == allMembers.length) {
             removeAll();
         } else {
             assignAll();
@@ -93,7 +87,7 @@ if (isManager) {
 
         console.log(assignedList.length)
         console.log(allMembersMails.length)
-        console.log(assignedList.length == allMembersMails.length)
+        console.log(assignedList.length == allMembers.length)
         console.log(allMembers)
 
         let toggleAllButton = bucket.querySelector('.toggle-all-button');
@@ -102,7 +96,7 @@ if (isManager) {
         let childNode = document.createElement('input');
         childNode.type = "checkbox"
         childNode.className = 'toggle-all-button'
-        childNode.checked =  assignedList.length == allMembersMails.length ? true : false;
+        childNode.checked =  assignedList.length == allMembers.length ? true : false;
         childNode.onclick = function (){ 
             toggleAll();
         }
@@ -130,16 +124,6 @@ if (isManager) {
             for (let d = 0; d < allMembers.length; d++) {
                 createMemberToggler(allMembers[d]);
             }
-
-            /*
-            for (var b = 0; b < assignedList.length; b++) {
-                let childNode = document.createElement("p")
-                childNode.className = 'paragraph small no-margin _12px opaque50';
-               childNode.style.marginBottom = '5px';
-                childNode.innerText = assignedList[b]
-                assignedMembersContainer.appendChild(childNode);
-            }
-            */
             createToggleAllButton();
     }
 
@@ -166,16 +150,6 @@ if (isManager) {
             createMemberToggler(assignedList[d]);
         }
 
-        /*
-        for (var b = 0; b < assignedList.length; b++) {
-            let childNode = document.createElement("p")
-            childNode.className = 'paragraph small no-margin _12px opaque50';
-            childNode.style.marginBottom = '5px';
-            childNode.innerText = assignedList[b]
-            assignedMembersContainer.appendChild(childNode);
-        }
-        */
-
         createToggleAllButton();
     }
 
@@ -183,8 +157,8 @@ if (isManager) {
 
     function updateItem (element, id) {
 
-      console.log(assignedList)
-            console.log(notAssignedList)
+      console.log(allMembers)
+
 
         let isAssigned = assignedList.includes(element.id);
 
@@ -207,8 +181,7 @@ if (isManager) {
         hiddenInputUnassigned.value = '';
         hiddenInputUnassigned.value = notAssignedList.join(', ');
 
-        console.log(assignedList)
-            console.log(notAssignedList)
+        console.log(allMembers)
     
         createToggleAllButton();                
     }
