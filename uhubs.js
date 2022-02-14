@@ -197,8 +197,10 @@ function teamMemberBucketAssignment() {
 
 
          function updateItem (element, id) {
+          console.log('is assigned list:')
+          console.log(assignedList)
              let isAssigned = assignedList.includes(element.id);
-             console.log('is assigned:')
+             console.log('is assigned boolean:')
              console.log(isAssigned)
              console.log(element)
              console.log(element.id)
