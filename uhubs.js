@@ -74,7 +74,7 @@ if (isManager) {
     let allMembersContainer = bucket.querySelector('.all-members-container');
     let hiddenInputAssigned = bucket.querySelector('.assigned-input');
     let hiddenInputUnassigned = bucket.querySelector('.unassigned-input');
-    
+
     hiddenInputAssigned.value = assignedList.join(', ');
     hiddenInputUnassigned.value = notAssignedList.join(', ');
 
@@ -132,6 +132,7 @@ if (isManager) {
             for (let d = 0; d < allMembers.length; d++) {
                 createMemberToggler(allMembers[d]);
             }
+            console.log(allMembers)
             createToggleAllButton();
     }
 
