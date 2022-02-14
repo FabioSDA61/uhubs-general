@@ -71,7 +71,8 @@ if (isManager) {
     let notAssignedList = allMembers;
     const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
     const allMembersContainer = bucket.querySelector('.all-members-container');
-    const hiddenInput = bucket.querySelector('.assigned-input');
+    let hiddenInputAssigned = bucket.querySelector('.assigned-input');
+    let hiddenInputUnassigned = bucket.querySelector('.unassigned-input');
     //add not assignement members to noAssignedList
 
 
@@ -115,8 +116,9 @@ if (isManager) {
             console.log(allMembers)
 
             allMembersContainer.innerHTML = '';
-            hiddenInput.value = '';
-            hiddenInput.value = allMembers.join(', ')
+            hiddenInputAssigned.value = '';
+            hiddenInputUnassigned.value = '';
+            hiddenInputAssigned.value = allMembers.join(', ')
 
             for (let d = 0; d < allMembers.length; d++) {
                 createMemberToggler(allMembers[d]);
@@ -141,8 +143,8 @@ if (isManager) {
         assignedList= [];
 
         allMembersContainer.innerHTML = '';
-        hiddenInput.value = '';
-        hiddenInput.value = assignedList.join(', ')
+        hiddenInputAssigned.value = '';
+        hiddenInputUnassigned.value = allMembers;
 
         for (let d = 0; d < notAssignedList.length; d++) {
             createMemberToggler(notAssignedList[d]);
@@ -188,8 +190,10 @@ if (isManager) {
         //assignedMembersContainer.innerHTML = '';
         //allMembersContainer.innerHTML = '';
 
-        hiddenInput.value = '';
-        hiddenInput.value = assignedList.join(', ')
+        hiddenInputAssigned.value = '';
+        hiddenInputAssigned.value = assignedList.join(', ')
+        hiddenInputUnassigned.value = '';
+        hiddenInputUnassigned.value = notAssignedList.join(', ')
         /*
    
 
@@ -233,7 +237,7 @@ if (isManager) {
 
     //initialPopulation
 
-    hiddenInput.value = assignedList.join(', ');
+    hiddenInputAssigned.value = assignedList.join(', ');
 
     for (let d = 0; d < assignedList.length; d++) {
         createMemberToggler(assignedList[d]);
