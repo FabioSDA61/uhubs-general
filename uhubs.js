@@ -122,7 +122,7 @@ function teamMemberBucketAssignment() {
                 console.log('pre-click assigned: ' + assignedList);
                 console.log('pre-click not assigned: ' + notAssignedList);
 
-                 assignedList.push(...notAssignedList)
+                 assignedList.push(...allMembers)
                  notAssignedList = [];
 
                  console.log('assigned: ' + assignedList);
@@ -151,7 +151,7 @@ function teamMemberBucketAssignment() {
 
          function removeAll() {
             console.log('removeAll')
-             notAssignedList.push(...assignedList)
+             notAssignedList.push(...allMembers)
              assignedList= [];
 
              console.log('assigned: ');
