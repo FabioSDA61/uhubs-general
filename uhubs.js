@@ -65,11 +65,17 @@ if (isManager) {
     // bucket state
     const bucket = document.querySelector('.bucket-create-form')
     let assignedList = [];
+    let notAssignedList = [];
+    for (var i = 0; i < hiddenEmails.length; i++) {
+      let email = hiddenEmails[i].innerText;
+      notAssignedList.push(email);
+  }
 
-    let notAssignedList = allMembers;
     let allMembersContainer = bucket.querySelector('.all-members-container');
     let hiddenInputAssigned = bucket.querySelector('.assigned-input');
     let hiddenInputUnassigned = bucket.querySelector('.unassigned-input');
+
+    
 
 
 
@@ -217,8 +223,6 @@ if (isManager) {
 
     //initialPopulation
 
-    hiddenInputAssigned.value = assignedList.join(', ');
-    hiddenInputUnassigned.value = notAssignedList.join(', ');
 
     for (let d = 0; d < assignedList.length; d++) {
         createMemberToggler(assignedList[d]);
