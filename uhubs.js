@@ -70,7 +70,7 @@ function teamMemberBucketAssignment() {
       //
          // bucket state
          const bucket = managerBuckets[n]
-         console.log(bucket.querySelector('.bucket-name'))
+         console.log(bucket.querySelector('.bucket-name').innerHTML)
          if (bucket.querySelector('.assigned-team-members')) {
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
         } 
@@ -219,8 +219,10 @@ function teamMemberBucketAssignment() {
              hiddenInput.value = '';
              hiddenInput.value = assignedList.toString();
 
-             console.log('assigned: ' + assignedList);
-             console.log('not assigned: ' + notAssignedList);
+             console.log('assigned: ');
+                console.log(assignedList);
+                console.log('not assigned:');
+                console.log(notAssignedList);
 
              for (var i = 0; i < assignedList.length; i++) {
                  let childNode = document.createElement("p")
