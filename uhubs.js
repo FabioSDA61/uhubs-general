@@ -111,7 +111,8 @@ if (isManager) {
            assignedList = [];
            assignedList = allMembers;
             notAssignedList = [];
-
+            console.log(assignedList)
+            console.log(allMembers)
 
             allMembersContainer.innerHTML = '';
             hiddenInput.value = '';
