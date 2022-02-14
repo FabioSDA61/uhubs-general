@@ -184,7 +184,7 @@ if (isManager) {
             }
         }
 
-        assignedMembersContainer.innerHTML = '';
+        //assignedMembersContainer.innerHTML = '';
         //allMembersContainer.innerHTML = '';
 
         hiddenInput.value = '';
