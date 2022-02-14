@@ -130,7 +130,7 @@ if (isManager) {
             hiddenInputAssigned.value = notAssignedList.join(', ')
 
             for (let d = 0; d < assignedList.length; d++) {
-                createMemberToggler(aassignedList[d]);
+                createMemberToggler(assignedList[d]);
             }
             console.log(allMembers)
             createToggleAllButton();
