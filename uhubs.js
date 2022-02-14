@@ -109,16 +109,16 @@ if (isManager) {
      console.log('assignAll')
 
            assignedList = [];
-            assignedList.push(...allMembers)
+           assignedList = allMembers;
             notAssignedList = [];
 
 
             allMembersContainer.innerHTML = '';
             hiddenInput.value = '';
-            hiddenInput.value = assignedList.join(', ')
+            hiddenInput.value = allMembers.join(', ')
 
-            for (let d = 0; d < assignedList.length; d++) {
-                createMemberToggler(assignedList[d]);
+            for (let d = 0; d < allMembers.length; d++) {
+                createMemberToggler(allMembers[d]);
             }
 
             /*
@@ -136,7 +136,7 @@ if (isManager) {
     function removeAll() {
   
        notAssignedList = [];
-        notAssignedList.push(...allMembers)
+       notAssignedList = allMembers;
         assignedList= [];
 
         allMembersContainer.innerHTML = '';
