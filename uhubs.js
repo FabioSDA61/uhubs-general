@@ -69,8 +69,7 @@ if (isManager) {
      assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
    } */
     let notAssignedList = allMembers;
-    const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
-    const allMembersContainer = bucket.querySelector('.all-members-container');
+    let allMembersContainer = bucket.querySelector('.all-members-container');
     let hiddenInputAssigned = bucket.querySelector('.assigned-input');
     let hiddenInputUnassigned = bucket.querySelector('.unassigned-input');
     //add not assignement members to noAssignedList
@@ -111,12 +110,13 @@ if (isManager) {
     function assignAll() {
 
      console.log('assignAll')
+     console.log(assignedList)
+            console.log(notAssignedList)
 
            assignedList = [];
            assignedList = allMembers;
             notAssignedList = [];
-            console.log(assignedList)
-            console.log(allMembers)
+            
 
             allMembersContainer.innerHTML = '';
             hiddenInputAssigned.value = '';
@@ -140,6 +140,10 @@ if (isManager) {
     }
 
     function removeAll() {
+
+      console.log('removeAll')
+      console.log(assignedList)
+            console.log(notAssignedList)
   
        notAssignedList = [];
        notAssignedList = allMembers;
@@ -147,6 +151,7 @@ if (isManager) {
 
         allMembersContainer.innerHTML = '';
         hiddenInputAssigned.value = '';
+        hiddenInputUnassigned.value = '';
         hiddenInputUnassigned.value = allMembers;
 
         for (let d = 0; d < notAssignedList.length; d++) {
@@ -173,6 +178,9 @@ if (isManager) {
 
 
     function updateItem (element, id) {
+
+      console.log(assignedList)
+            console.log(notAssignedList)
 
         let isAssigned = assignedList.includes(element.id);
 
@@ -209,6 +217,8 @@ if (isManager) {
         }
         */
        
+        console.log(assignedList)
+            console.log(notAssignedList)
     
         createToggleAllButton();                
     }
