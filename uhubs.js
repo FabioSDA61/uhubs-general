@@ -154,8 +154,10 @@ function teamMemberBucketAssignment() {
              notAssignedList.push(...assignedList)
              assignedList= [];
 
-             console.log('assigned: ' + assignedList);
-             console.log('not assigned: ' + notAssignedList);
+             console.log('assigned: ');
+             console.log(assignedList);
+             console.log('not assigned:');
+             console.log(notAssignedList);
 
              bucket.querySelector('.assigned-members-container');
 
