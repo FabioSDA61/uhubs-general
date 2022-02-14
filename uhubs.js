@@ -214,7 +214,7 @@ function teamMemberBucketAssignment() {
              }
 
              assignedMembersContainer.innerHTML = '';
-             //allMembersContainer.innerHTML = '';
+             allMembersContainer.innerHTML = '';
 
              hiddenInput.value = '';
              hiddenInput.value = assignedList.toString();
