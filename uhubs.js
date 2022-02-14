@@ -231,6 +231,11 @@ function teamMemberBucketAssignment() {
                  childNode.innerText = assignedList[i]
                  assignedMembersContainer.appendChild(childNode);
              }
+
+             for (let d = 0; d < notAssignedList.length; d++) {
+              createMemberToggler(notAssignedList[d]);
+              }
+
              createToggleAllButton();                
          }
 
