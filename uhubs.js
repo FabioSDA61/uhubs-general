@@ -51,12 +51,14 @@ if (isManager) {
 
  // global info 
  let managerBuckets = document.querySelectorAll('.edit-view-bucket');
- let allMembers = [];
+ let allMembersMails = [];
   let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
   for (var i = 0; i < hiddenEmails.length; i++) {
       let email = hiddenEmails[i].innerText;
-      allMembers.push(email);
+      allMembersMails.push(email);
   }
+
+  const allMembers = allMembersMails;
 
 
   function assignmentCreateBucket() {
