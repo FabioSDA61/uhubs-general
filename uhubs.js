@@ -202,9 +202,9 @@ if (isManager) {
         //allMembersContainer.innerHTML = '';
 
         hiddenInputAssigned.value = '';
-        hiddenInputAssigned.value = assignedList.join(', ')
+        hiddenInputAssigned.value = assignedList.join(', ');
         hiddenInputUnassigned.value = '';
-        hiddenInputUnassigned.value = notAssignedList.join(', ')
+        hiddenInputUnassigned.value = notAssignedList.join(', ');
         /*
    
 
