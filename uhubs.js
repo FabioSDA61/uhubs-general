@@ -271,6 +271,8 @@ function teamMemberBucketAssignment() {
 
          //initialPopulation
 
+         hiddenInput.value = assignedList.toString();
+
          for (let d = 0; d < assignedList.length; d++) {
              createMemberToggler(assignedList[d]);
          }
