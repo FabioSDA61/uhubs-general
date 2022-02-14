@@ -113,7 +113,6 @@ if (isManager) {
             notAssignedList = [];
 
 
-            assignedMembersContainer.innerHTML = '';
             allMembersContainer.innerHTML = '';
             hiddenInput.value = '';
             hiddenInput.value = assignedList.join(', ')
@@ -140,8 +139,6 @@ if (isManager) {
         notAssignedList.push(...allMembers)
         assignedList= [];
 
-
-        assignedMembersContainer.innerHTML = '';
         allMembersContainer.innerHTML = '';
         hiddenInput.value = '';
         hiddenInput.value = assignedList.join(', ')
