@@ -214,7 +214,7 @@ function teamMemberBucketAssignment() {
              }
 
              assignedMembersContainer.innerHTML = '';
-             allMembersContainer.innerHTML = '';
+             //allMembersContainer.innerHTML = '';
 
              hiddenInput.value = '';
              hiddenInput.value = assignedList.toString();
@@ -231,11 +231,15 @@ function teamMemberBucketAssignment() {
                  childNode.innerText = assignedList[i]
                  assignedMembersContainer.appendChild(childNode);
              }
-
+            /*
              for (let d = 0; d < notAssignedList.length; d++) {
               createMemberToggler(notAssignedList[d]);
               }
-
+            
+            for (let d = 0; d < assignedList.length; d++) {
+              createMemberToggler(assignedList[d]);
+              }
+             */   
              createToggleAllButton();                
          }
 
