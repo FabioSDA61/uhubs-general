@@ -119,8 +119,8 @@ if (isManager) {
      console.log(assignedList)
             console.log(notAssignedList)
 
-           assignedList = [];
-           assignedList = allMembers;
+            assignedList = [];
+            assignedList.push(...allMembers)
             notAssignedList = [];
             
 
@@ -129,8 +129,8 @@ if (isManager) {
             hiddenInputUnassigned.value = '';
             hiddenInputAssigned.value = notAssignedList.join(', ')
 
-            for (let d = 0; d < allMembers.length; d++) {
-                createMemberToggler(allMembers[d]);
+            for (let d = 0; d < assignedList.length; d++) {
+                createMemberToggler(aassignedList[d]);
             }
             console.log(allMembers)
             createToggleAllButton();
@@ -142,8 +142,8 @@ if (isManager) {
       console.log(assignedList)
             console.log(notAssignedList)
   
-       notAssignedList = [];
-       notAssignedList = allMembers;
+      notAssignedList = [];
+      notAssignedList.push(...allMembers)
       assignedList= [];
 
         allMembersContainer.innerHTML = '';
@@ -355,10 +355,6 @@ assignmentCreateBucket();
              notAssignedList.push(...allMembers)
              assignedList= [];
 
-             console.log('assigned: ');
-             console.log(assignedList);
-             console.log('not assigned:');
-             console.log(notAssignedList);
 
              bucket.querySelector('.assigned-members-container');
 
