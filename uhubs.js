@@ -155,6 +155,10 @@ function teamMemberBucketAssignment() {
 
          function removeAll() {
             console.log('removeAll')
+
+            console.log('pre-click assigned: ' + assignedList);
+                console.log('pre-click not assigned: ' + notAssignedList);
+                
              notAssignedList.push(...allMembers)
              assignedList= [];
 
