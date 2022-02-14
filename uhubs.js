@@ -64,6 +64,8 @@ function teamMemberBucketAssignment() {
  //enable team member assignment on every bucket    
  for (var n = 0; n < managerBuckets.length; n++) {
 
+      console.log(bucket.querySelector('.bucket-name'))
+
 
       //
          // bucket state
@@ -125,8 +127,10 @@ function teamMemberBucketAssignment() {
                  assignedList.push(...allMembers)
                  notAssignedList = [];
 
-                 console.log('assigned: ' + assignedList);
-                 console.log('not assigned: ' + notAssignedList);
+                console.log('assigned: ');
+                console.log(assignedList);
+                console.log('not assigned:');
+                console.log(notAssignedList);
 
                  assignedMembersContainer.innerHTML = '';
                  allMembersContainer.innerHTML = '';
