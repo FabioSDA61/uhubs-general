@@ -198,6 +198,8 @@ function teamMemberBucketAssignment() {
 
          function updateItem (element, id) {
              let isAssigned = assignedList.includes(element.id);
+             console.log('is assigned:')
+             console.log(true)
 
              if (isAssigned) {
                  notAssignedList.push(element.id)
