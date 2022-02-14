@@ -94,6 +94,7 @@ if (isManager) {
         console.log(assignedList.length)
         console.log(allMembers.length)
         console.log(assignedList.length == allMembers.length)
+        console.log(allMembers)
 
         let toggleAllButton = bucket.querySelector('.toggle-all-button');
             if (toggleAllButton) { toggleAllButton.remove()};
