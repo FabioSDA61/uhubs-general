@@ -63,6 +63,7 @@ if (isManager) {
  for (var n = 0; n < managerBuckets.length; n++) {
 
   function sortAssignmentsPerBucket() {
+
          // bucket state
          const bucket = managerBuckets[n]
          console.log('------ BUCKET START' + bucket.querySelector('.bucket-name').innerHTML)
@@ -79,6 +80,16 @@ if (isManager) {
                  notAssignedList.push(allMembers[a])
              }
          }
+
+
+         bucket.querySelector('.log-state').onclick = function (){ 
+            console.log('allMembers:')
+          console.log(allMembers)
+          console.log('assignedList:')
+          console.log(assignedList)
+          console.log('notAssignedList:')
+          console.log(notAssignedList)
+        }
          console.log('allMembers:')
          console.log(allMembers)
          console.log('assignedList:')
@@ -301,7 +312,7 @@ if (isManager) {
          console.log(notAssignedList)
 
          console.log('------ BUCKET END' + bucket.querySelector('.bucket-name').innerHTML)
-        }
+  }
   
   sortAssignmentsPerBucket();
 }
