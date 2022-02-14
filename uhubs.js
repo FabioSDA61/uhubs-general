@@ -67,7 +67,7 @@ function teamMemberBucketAssignment() {
       
 
 
-      function sortAssignmentsForAllBuckets() {
+    function sortAssignmentsForAllBuckets() {
          // bucket state
          const bucket = managerBuckets[n]
          console.log('------ BUCKET START' + bucket.querySelector('.bucket-name').innerHTML)
@@ -306,8 +306,9 @@ function teamMemberBucketAssignment() {
          console.log(notAssignedList)
 
          console.log('------ BUCKET END' + bucket.querySelector('.bucket-name').innerHTML)
-    }
+    
   }
+  sortAssignmentsForAllBuckets();
 }
 
 teamMemberBucketAssignment();
