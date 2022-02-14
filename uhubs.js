@@ -131,7 +131,7 @@ if (isManager) {
 
                 console.log('pre-click assigned: ' + assignedList);
                 console.log('pre-click not assigned: ' + notAssignedList);
-
+                allMembers = [];
                  assignedList.push(...allMembers)
                  notAssignedList = [];
 
@@ -167,6 +167,7 @@ if (isManager) {
             console.log('pre-click assigned: ' + assignedList);
                 console.log('pre-click not assigned: ' + notAssignedList);
 
+            notAssignedList = [];
              notAssignedList.push(...allMembers)
              assignedList= [];
 
