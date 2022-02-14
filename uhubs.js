@@ -90,6 +90,9 @@ if (isManager) {
 
     function createToggleAllButton(){
 
+        console.log(assignedList.length)
+        console.log(allMembers.length)
+
         let toggleAllButton = bucket.querySelector('.toggle-all-button');
             if (toggleAllButton) { toggleAllButton.remove()};
 
@@ -205,8 +208,7 @@ if (isManager) {
             assignedMembersContainer.appendChild(childNode);
         }
         */
-       console.log(assignedList)
-       console.log(notAssignedList)
+       
     
         createToggleAllButton();                
     }
