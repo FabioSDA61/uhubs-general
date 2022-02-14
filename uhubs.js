@@ -143,7 +143,7 @@ if (isManager) {
                  assignedMembersContainer.innerHTML = '';
                  allMembersContainer.innerHTML = '';
                  hiddenInput.value = '';
-                 hiddenInput.value = assignedList.toString();
+                 hiddenInput.value = assignedList.join(', ')
 
                  for (let d = 0; d < assignedList.length; d++) {
                      createMemberToggler(assignedList[d]);
@@ -181,7 +181,7 @@ if (isManager) {
              assignedMembersContainer.innerHTML = '';
              allMembersContainer.innerHTML = '';
              hiddenInput.value = '';
-             hiddenInput.value = assignedList.toString();
+             hiddenInput.value = assignedList.join(', ')
 
              for (let d = 0; d < notAssignedList.length; d++) {
                  createMemberToggler(notAssignedList[d]);
@@ -231,7 +231,7 @@ if (isManager) {
              //allMembersContainer.innerHTML = '';
 
              hiddenInput.value = '';
-             hiddenInput.value = assignedList.toString();
+             hiddenInput.value = assignedList.join(', ')
 
              console.log('assigned: ');
                 console.log(assignedList);
@@ -285,7 +285,7 @@ if (isManager) {
 
          //initialPopulation
 
-         hiddenInput.value = assignedList.toString();
+         hiddenInput.value = assignedList.join(', ');
 
          for (let d = 0; d < assignedList.length; d++) {
              createMemberToggler(assignedList[d]);
