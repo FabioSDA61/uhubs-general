@@ -52,22 +52,17 @@ function teamMemberBucketAssignment() {
  // global info 
  let managerBuckets = document.querySelectorAll('.edit-view-bucket');
  let allMembers = [];
-    let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
-    for (var i = 0; i < hiddenEmails.length; i++) {
-        let email = hiddenEmails[i].innerText;
-        allMembers.push(email);
-    }
-
-   
+  let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
+  for (var i = 0; i < hiddenEmails.length; i++) {
+      let email = hiddenEmails[i].innerText;
+      allMembers.push(email);
+  }
 
  
  //enable team member assignment on every bucket    
  for (var n = 0; n < managerBuckets.length; n++) {
 
-      
-
-
-    function sortAssignmentsForAllBuckets() {
+  function sortAssignmentsPerBucket() {
          // bucket state
          const bucket = managerBuckets[n]
          console.log('------ BUCKET START' + bucket.querySelector('.bucket-name').innerHTML)
@@ -306,9 +301,9 @@ function teamMemberBucketAssignment() {
          console.log(notAssignedList)
 
          console.log('------ BUCKET END' + bucket.querySelector('.bucket-name').innerHTML)
-    
+        }
   }
-  sortAssignmentsForAllBuckets();
+  sortAssignmentsPerBucket();
 }
 
 teamMemberBucketAssignment();
