@@ -168,11 +168,15 @@ if (isManager) {
                 assignedList.splice(index, 1); 
             }
         } else {
+          console.log(notAssignedList)
+          console.log(allMembers)
             assignedList.push(element.id)
             const index = notAssignedList.indexOf(element.id);
             if (index > -1) {
                 notAssignedList.splice(index, 1); 
             }
+            console.log(notAssignedList)
+          console.log(allMembers)
         }
 
         hiddenInputAssigned.value = '';
