@@ -82,7 +82,7 @@ if (isManager) {
 
     //toggle assign-all button of and delete-all on if all members are already invited
     function toggleAll() {
-        if (assignedList.length == allMembers.length) {
+        if (assignedList.length == allMembersMails.length) {
             removeAll();
         } else {
             assignAll();
@@ -92,8 +92,8 @@ if (isManager) {
     function createToggleAllButton(){
 
         console.log(assignedList.length)
-        console.log(allMembers.length)
-        console.log(assignedList.length == allMembers.length)
+        console.log(allMembersMails.length)
+        console.log(assignedList.length == allMembersMails.length)
         console.log(allMembers)
 
         let toggleAllButton = bucket.querySelector('.toggle-all-button');
@@ -102,7 +102,7 @@ if (isManager) {
         let childNode = document.createElement('input');
         childNode.type = "checkbox"
         childNode.className = 'toggle-all-button'
-        childNode.checked =  assignedList.length == allMembers.length ? true : false;
+        childNode.checked =  assignedList.length == allMembersMails.length ? true : false;
         childNode.onclick = function (){ 
             toggleAll();
         }
