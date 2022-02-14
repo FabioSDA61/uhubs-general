@@ -70,7 +70,7 @@ function teamMemberBucketAssignment() {
       //
          // bucket state
          const bucket = managerBuckets[n]
-         console.log(bucket.querySelector('.bucket-name').innerHTML)
+         console.log('------ BUCKET START' + bucket.querySelector('.bucket-name').innerHTML)
          if (bucket.querySelector('.assigned-team-members')) {
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
         } 
@@ -304,6 +304,8 @@ function teamMemberBucketAssignment() {
          console.log(assignedList)
          console.log('notAssignedList:')
          console.log(notAssignedList)
+
+         console.log('------ BUCKET END' + bucket.querySelector('.bucket-name').innerHTML)
     
   }
 }
