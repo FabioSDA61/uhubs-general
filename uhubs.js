@@ -238,6 +238,7 @@ if (isManager) {
     //initialPopulation
 
     hiddenInputAssigned.value = assignedList.join(', ');
+    hiddenInputUnassigned.value = allMembers.join(', ');
 
     for (let d = 0; d < assignedList.length; d++) {
         createMemberToggler(assignedList[d]);
