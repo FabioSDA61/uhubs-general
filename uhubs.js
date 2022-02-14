@@ -296,6 +296,15 @@ function teamMemberBucketAssignment() {
              assignedMembersContainer.appendChild(childNode);
              
          }   
+
+
+         console.log('allMembers:')
+         console.log(allMembers)
+         console.log('assignedList:')
+         console.log(assignedList)
+         console.log('notAssignedList:')
+         console.log(notAssignedList)
+    
   }
 }
 
