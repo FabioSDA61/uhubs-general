@@ -48,7 +48,7 @@ if (isManager) {
 
 
 
-function teamMemberBucketAssignment() {
+
  // global info 
  let managerBuckets = document.querySelectorAll('.edit-view-bucket');
  let allMembers = [];
@@ -302,11 +302,11 @@ function teamMemberBucketAssignment() {
 
          console.log('------ BUCKET END' + bucket.querySelector('.bucket-name').innerHTML)
         }
-  }
+  
   sortAssignmentsPerBucket();
 }
 
-teamMemberBucketAssignment();
+
 
 
  // Populate the update forms of tasks and buckets with the according data
