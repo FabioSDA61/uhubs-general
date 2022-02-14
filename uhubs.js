@@ -60,7 +60,7 @@ if (isManager) {
 
 
   function assignmentCreateBucket() {
-
+    console.log('assign create bucket')
     // bucket state
     const bucket = document.querySelector('.bucket-create-form')
     let assignedList = [];
