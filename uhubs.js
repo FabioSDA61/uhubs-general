@@ -198,25 +198,11 @@ if (isManager) {
             }
         }
 
-        //assignedMembersContainer.innerHTML = '';
-        //allMembersContainer.innerHTML = '';
-
         hiddenInputAssigned.value = '';
         hiddenInputAssigned.value = assignedList.join(', ');
         hiddenInputUnassigned.value = '';
         hiddenInputUnassigned.value = notAssignedList.join(', ');
-        /*
-   
 
-        for (var i = 0; i < assignedList.length; i++) {
-            let childNode = document.createElement("p")
-            childNode.className = 'paragraph small no-margin _12px opaque50';
-            childNode.style.marginBottom = '5px';
-            childNode.innerText = assignedList[i]
-            assignedMembersContainer.appendChild(childNode);
-        }
-        */
-       
         console.log(assignedList)
             console.log(notAssignedList)
     
