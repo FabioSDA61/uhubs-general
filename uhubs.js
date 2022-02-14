@@ -115,24 +115,19 @@ if (isManager) {
 
     function assignAll() {
 
-     console.log('assignAll')
-     console.log(assignedList)
-            console.log(notAssignedList)
-
             assignedList = [];
             assignedList.push(...allMembers)
-            notAssignedList = [];
-            
+            notAssignedList = [];            
 
             allMembersContainer.innerHTML = '';
             hiddenInputAssigned.value = '';
             hiddenInputUnassigned.value = '';
-            hiddenInputAssigned.value = notAssignedList.join(', ')
+            hiddenInputAssigned.value = assignedList.join(', ')
 
             for (let d = 0; d < assignedList.length; d++) {
                 createMemberToggler(assignedList[d]);
             }
-            console.log(allMembers)
+            console.log(assignedList)
             createToggleAllButton();
     }
 
