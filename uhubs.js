@@ -91,6 +91,7 @@ if (isManager) {
 
         console.log(assignedList.length)
         console.log(allMembers.length)
+        console.log(assignedList.length == allMembers.length)
 
         let toggleAllButton = bucket.querySelector('.toggle-all-button');
             if (toggleAllButton) { toggleAllButton.remove()};
@@ -121,7 +122,7 @@ if (isManager) {
             allMembersContainer.innerHTML = '';
             hiddenInputAssigned.value = '';
             hiddenInputUnassigned.value = '';
-            hiddenInputAssigned.value = allMembers.join(', ')
+            hiddenInputAssigned.value = notAssignedList.join(', ')
 
             for (let d = 0; d < allMembers.length; d++) {
                 createMemberToggler(allMembers[d]);
@@ -147,12 +148,12 @@ if (isManager) {
   
        notAssignedList = [];
        notAssignedList = allMembers;
-        assignedList= [];
+      assignedList= [];
 
         allMembersContainer.innerHTML = '';
         hiddenInputAssigned.value = '';
         hiddenInputUnassigned.value = '';
-        hiddenInputUnassigned.value = allMembers;
+        hiddenInputUnassigned.value = notAssignedList;
 
         for (let d = 0; d < notAssignedList.length; d++) {
             createMemberToggler(notAssignedList[d]);
@@ -238,7 +239,7 @@ if (isManager) {
     //initialPopulation
 
     hiddenInputAssigned.value = assignedList.join(', ');
-    hiddenInputUnassigned.value = allMembers.join(', ');
+    hiddenInputUnassigned.value = notAssignedList.join(', ');
 
     for (let d = 0; d < assignedList.length; d++) {
         createMemberToggler(assignedList[d]);
