@@ -64,12 +64,13 @@ function teamMemberBucketAssignment() {
  //enable team member assignment on every bucket    
  for (var n = 0; n < managerBuckets.length; n++) {
 
-      console.log(bucket.querySelector('.bucket-name'))
+      
 
 
       //
          // bucket state
          const bucket = managerBuckets[n]
+         console.log(bucket.querySelector('.bucket-name'))
          if (bucket.querySelector('.assigned-team-members')) {
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
         } 
@@ -158,7 +159,7 @@ function teamMemberBucketAssignment() {
 
             console.log('pre-click assigned: ' + assignedList);
                 console.log('pre-click not assigned: ' + notAssignedList);
-                
+
              notAssignedList.push(...allMembers)
              assignedList= [];
 
