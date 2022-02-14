@@ -67,9 +67,12 @@ if (isManager) {
          // bucket state
          const bucket = managerBuckets[n]
          console.log('------ BUCKET START' + bucket.querySelector('.bucket-name').innerHTML)
+         let assignedList = [];
          if (bucket.querySelector('.assigned-team-members')) {
-          assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
-        } 
+          assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : null;
+        } else {
+          null
+        }
          let notAssignedList = [];
          const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
          const allMembersContainer = bucket.querySelector('.all-members-container');
