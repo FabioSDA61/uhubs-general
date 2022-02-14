@@ -58,6 +58,195 @@ if (isManager) {
       allMembers.push(email);
   }
 
+
+  function assignmentCreateBucket() {
+
+    // bucket state
+    const bucket = bucket.querySelector('.bucket-create-form')
+    let assignedList = [];
+    /*
+    if (bucket.querySelector('.assigned-team-members')) {
+     assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
+   } */
+    let notAssignedList = [];
+    const assignedMembersContainer = bucket.querySelector('.assigned-members-container');
+    const allMembersContainer = bucket.querySelector('.all-members-container');
+    const hiddenInput = bucket.querySelector('.assigned-input');
+    //add not assignement members to noAssignedList
+
+
+
+
+
+    //toggle assign-all button of and delete-all on if all members are already invited
+    function toggleAll() {
+        if (assignedList.length == allMembers.length) {
+            removeAll();
+        } else {
+            assignAll();
+        }
+    }
+
+    function createToggleAllButton(){
+
+        let toggleAllButton = bucket.querySelector('.toggle-all-button');
+            if (toggleAllButton) { toggleAllButton.remove()};
+
+        let childNode = document.createElement('input');
+        childNode.type = "checkbox"
+        childNode.className = 'toggle-all-button'
+        childNode.checked =  assignedList.length == allMembers.length ? true : false;
+        childNode.onclick = function (){ 
+            toggleAll();
+        }
+        bucket.querySelector('.toggle-all-container').appendChild(childNode);
+    }
+    createToggleAllButton();
+
+
+    function assignAll() {
+
+     console.log('assignAll')
+
+           assignedList = [];
+            assignedList.push(...allMembers)
+            notAssignedList = [];
+
+
+            assignedMembersContainer.innerHTML = '';
+            allMembersContainer.innerHTML = '';
+            hiddenInput.value = '';
+            hiddenInput.value = assignedList.join(', ')
+
+            for (let d = 0; d < assignedList.length; d++) {
+                createMemberToggler(assignedList[d]);
+            }
+
+            /*
+            for (var b = 0; b < assignedList.length; b++) {
+                let childNode = document.createElement("p")
+                childNode.className = 'paragraph small no-margin _12px opaque50';
+               childNode.style.marginBottom = '5px';
+                childNode.innerText = assignedList[b]
+                assignedMembersContainer.appendChild(childNode);
+            }
+            */
+            createToggleAllButton();
+    }
+
+    function removeAll() {
+  
+       notAssignedList = [];
+        notAssignedList.push(...allMembers)
+        assignedList= [];
+
+
+        assignedMembersContainer.innerHTML = '';
+        allMembersContainer.innerHTML = '';
+        hiddenInput.value = '';
+        hiddenInput.value = assignedList.join(', ')
+
+        for (let d = 0; d < notAssignedList.length; d++) {
+            createMemberToggler(notAssignedList[d]);
+            }
+
+        for (let d = 0; d < assignedList.length; d++) {
+            createMemberToggler(assignedList[d]);
+        }
+
+        /*
+        for (var b = 0; b < assignedList.length; b++) {
+            let childNode = document.createElement("p")
+            childNode.className = 'paragraph small no-margin _12px opaque50';
+            childNode.style.marginBottom = '5px';
+            childNode.innerText = assignedList[b]
+            assignedMembersContainer.appendChild(childNode);
+        }
+        */
+
+        createToggleAllButton();
+    }
+
+
+
+    function updateItem (element, id) {
+
+        let isAssigned = assignedList.includes(element.id);
+
+        if (isAssigned) {
+            notAssignedList.push(element.id)
+            const index = assignedList.indexOf(element.id);
+            if (index > -1) {
+                assignedList.splice(index, 1); 
+            }
+        } else {
+            assignedList.push(element.id)
+            const index = notAssignedList.indexOf(element.id);
+            if (index > -1) {
+                notAssignedList.splice(index, 1); 
+            }
+        }
+
+        assignedMembersContainer.innerHTML = '';
+        //allMembersContainer.innerHTML = '';
+
+        hiddenInput.value = '';
+        hiddenInput.value = assignedList.join(', ')
+        /*
+   
+
+        for (var i = 0; i < assignedList.length; i++) {
+            let childNode = document.createElement("p")
+            childNode.className = 'paragraph small no-margin _12px opaque50';
+            childNode.style.marginBottom = '5px';
+            childNode.innerText = assignedList[i]
+            assignedMembersContainer.appendChild(childNode);
+        }
+        */
+    
+        createToggleAllButton();                
+    }
+
+
+    function createMemberToggler(email){
+        let name = email.split('@')[0];
+
+        let containerChildNode = document.createElement('div');
+        containerChildNode.className = name + '-container member-toggler-container';
+
+        let checkboxChildNode = document.createElement('input');
+        checkboxChildNode.type = "checkbox"
+        checkboxChildNode.className = name
+        checkboxChildNode.id = email
+        checkboxChildNode.checked =  assignedList.includes(email)
+        checkboxChildNode.onclick = function (){ 
+            updateItem(this);
+        }
+        containerChildNode.appendChild(checkboxChildNode);
+
+        let childNodeText = document.createElement('p');   
+        childNodeText.className = 'paragraph small no-margin _12px opaque50';                    
+        childNodeText.innerText = email
+        childNodeText.style.paddingLeft = '10px'
+        containerChildNode.appendChild(childNodeText);
+
+        allMembersContainer.appendChild(containerChildNode);
+    }
+
+    //initialPopulation
+
+    hiddenInput.value = assignedList.join(', ');
+
+    for (let d = 0; d < assignedList.length; d++) {
+        createMemberToggler(assignedList[d]);
+    }
+
+    for (let d = 0; d < notAssignedList.length; d++) {
+        createMemberToggler(notAssignedList[d]);
+    }
+
+}
+assignmentCreateBucket();
  
  //enable team member assignment on every bucket    
  for (var n = 0; n < managerBuckets.length; n++) {
@@ -315,7 +504,6 @@ if (isManager) {
 
          console.log('------ BUCKET END' + bucket.querySelector('.bucket-name').innerHTML)
   }
-  
   sortAssignmentsPerBucket();
 }
 
