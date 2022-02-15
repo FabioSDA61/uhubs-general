@@ -61,7 +61,6 @@ if (isManager) {
 
 
   function assignmentCreateBucket() {
-    console.log('assign create bucket')
     // bucket state
     const bucket = document.querySelector('.bucket-create-form')
     let assignedList = [];
@@ -94,9 +93,6 @@ if (isManager) {
 
     function createToggleAllButton(){
 
-        console.log(assignedList.length)
-        console.log(assignedList.length == allMembers.length)
-        console.log(allMembers)
 
         let toggleAllButton = bucket.querySelector('.toggle-all-button');
             if (toggleAllButton) { toggleAllButton.remove()};
@@ -127,16 +123,11 @@ if (isManager) {
             for (let d = 0; d < assignedList.length; d++) {
                 createMemberToggler(assignedList[d]);
             }
-            console.log(assignedList)
             createToggleAllButton();
     }
 
     function removeAll() {
 
-      console.log('removeAll')
-      console.log(assignedList)
-            console.log(notAssignedList)
-  
       notAssignedList = [];
       notAssignedList.push(...allMembers)
       assignedList= [];
@@ -161,9 +152,6 @@ if (isManager) {
 
     function updateItem (element, id) {
 
-      console.log(allMembers)
-
-
         let isAssigned = assignedList.includes(element.id);
 
         if (isAssigned) {
@@ -173,15 +161,11 @@ if (isManager) {
                 assignedList.splice(index, 1); 
             }
         } else {
-          console.log(notAssignedList)
-          console.log(allMembers)
             assignedList.push(element.id)
             const index = notAssignedList.indexOf(element.id);
             if (index > -1) {
                 notAssignedList.splice(index, 1); 
             }
-            console.log(notAssignedList)
-          console.log(allMembers)
         }
 
         hiddenInputAssigned.value = '';
@@ -189,7 +173,6 @@ if (isManager) {
         hiddenInputUnassigned.value = '';
         hiddenInputUnassigned.value = notAssignedList.join(', ');
 
-        console.log(allMembers)
     
         createToggleAllButton();                
     }
@@ -241,7 +224,6 @@ assignmentCreateBucket();
 
          // bucket state
          const bucket = managerBuckets[n]
-         console.log('------ BUCKET START' + bucket.querySelector('.bucket-name').innerHTML)
          let assignedList = [];
          if (bucket.querySelector('.assigned-team-members')) {
           assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
@@ -290,18 +272,10 @@ assignmentCreateBucket();
 
          function assignAll() {
 
-          console.log('assignAll')
 
-                console.log('pre-click assigned: ' + assignedList);
-                console.log('pre-click not assigned: ' + notAssignedList);
                 assignedList = [];
                  assignedList.push(...allMembers)
                  notAssignedList = [];
-
-                console.log('assigned: ');
-                console.log(assignedList);
-                console.log('not assigned:');
-                console.log(notAssignedList);
 
                  assignedMembersContainer.innerHTML = '';
                  allMembersContainer.innerHTML = '';
@@ -328,10 +302,6 @@ assignmentCreateBucket();
          }
 
          function removeAll() {
-            console.log('removeAll')
-
-            console.log('pre-click assigned: ' + assignedList);
-                console.log('pre-click not assigned: ' + notAssignedList);
 
             notAssignedList = [];
              notAssignedList.push(...allMembers)
@@ -370,14 +340,8 @@ assignmentCreateBucket();
 
 
          function updateItem (element, id) {
-          console.log('is assigned list:')
-          console.log(assignedList)
              let isAssigned = assignedList.includes(element.id);
-             console.log('is assigned boolean:')
-             console.log(isAssigned)
-             console.log(element)
-             console.log(element.id)
-
+  
              if (isAssigned) {
                  notAssignedList.push(element.id)
                  const index = assignedList.indexOf(element.id);
@@ -393,17 +357,12 @@ assignmentCreateBucket();
              }
 
              assignedMembersContainer.innerHTML = '';
-             //allMembersContainer.innerHTML = '';
 
              hiddenInputAssigned.value = '';
              hiddenInputAssigned.value = assignedList.join(', ')
              hiddenInputUnassigned.value = '';
              hiddenInputUnassigned.value = notAssignedList.join(', ')
 
-             console.log('assigned: ');
-                console.log(assignedList);
-                console.log('not assigned:');
-                console.log(notAssignedList);
 
              for (var i = 0; i < assignedList.length; i++) {
                  let childNode = document.createElement("p")
@@ -412,15 +371,7 @@ assignmentCreateBucket();
                  childNode.innerText = assignedList[i]
                  assignedMembersContainer.appendChild(childNode);
              }
-            /*
-             for (let d = 0; d < notAssignedList.length; d++) {
-              createMemberToggler(notAssignedList[d]);
-              }
-            
-            for (let d = 0; d < assignedList.length; d++) {
-              createMemberToggler(assignedList[d]);
-              }
-             */   
+    
              createToggleAllButton();                
          }
 
@@ -474,14 +425,7 @@ assignmentCreateBucket();
          }   
 
 
-         console.log('allMembers:')
-         console.log(allMembers)
-         console.log('assignedList:')
-         console.log(assignedList)
-         console.log('notAssignedList:')
-         console.log(notAssignedList)
-
-         console.log('------ BUCKET END' + bucket.querySelector('.bucket-name').innerHTML)
+  
   }
   sortAssignmentsPerBucket();
 }
@@ -566,8 +510,6 @@ function handleUpdate () {
 
           buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
           buckets[i].querySelector('.bucket-color').style.backgroundColor = buckets[i].querySelector('.bucket-color-input').value
-          console.log(updateBucketButton.closest('.bucket-info-form'))
-          console.log(updateBucketButton.closest('.bucket-info-form').previousSibling)
           updateBucketButton.closest('.bucket-info-form').previousSibling.click();
   
       };
