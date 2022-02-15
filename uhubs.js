@@ -259,20 +259,7 @@ assignmentCreateBucket();
          }
 
 
-         bucket.querySelector('.log-state').onclick = function (){ 
-            console.log('allMembers:')
-          console.log(allMembers)
-          console.log('assignedList:')
-          console.log(assignedList)
-          console.log('notAssignedList:')
-          console.log(notAssignedList)
-        }
-         console.log('allMembers:')
-         console.log(allMembers)
-         console.log('assignedList:')
-         console.log(assignedList)
-         console.log('notAssignedList:')
-         console.log(notAssignedList)
+     
     
 
          //toggle assign-all button of and delete-all on if all members are already invited
