@@ -486,9 +486,6 @@ assignmentCreateBucket();
   sortAssignmentsPerBucket();
 }
 
-
-
-
  // Populate the update forms of tasks and buckets with the according data
   for (let i = 0; i < buckets.length; i++) {
     ['.bucket-name',
@@ -540,9 +537,16 @@ function handleUpdate () {
         updateBucketButton.onclick = function(){
         
           buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
+
           buckets[i].querySelector('.bucket-description').innerHTML = buckets[i].querySelector('.bucket-description-input').value
+          if (buckets[i].querySelector('.bucket-description-input').value) {buckets[i].querySelector('.bucket-description').style.display = 'block';}
+
           buckets[i].querySelector('.bucket-duration').innerHTML = buckets[i].querySelector('.bucket-duration-input').value
+          if (buckets[i].querySelector('.bucket-duration-input').value) {buckets[i].querySelector('.duration-container').style.display = 'flex';}
+
           buckets[i].querySelector('.bucket-order').innerHTML = buckets[i].querySelector('.bucket-order-input').value
+          if (buckets[i].querySelector('.bucket-order-input').value) {buckets[i].querySelector('.order-container').style.display = 'flex';}
+
           buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
           buckets[i].querySelector('.bucket-color').style.backgroundColor = buckets[i].querySelector('.bucket-color-input').value
           console.log(updateBucketButton.closest('.bucket-info-form'))
@@ -581,8 +585,6 @@ function handleUpdate () {
 };
 
 handleUpdate();
-
-
 
 
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
