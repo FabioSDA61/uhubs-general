@@ -1,6 +1,6 @@
+/*
 auth0EventEmitter.addEventListener("ready", () => {
 //start auth0 Eventemitter Wrap  
-
 
 
 // get all buckets
@@ -602,6 +602,7 @@ const handleCreateBucketFormReset = document.getElementById("trigger-reset-creat
     }
 
     }
+    
   
   
 };
@@ -611,6 +612,6 @@ const handleCreateBucketFormReset = document.getElementById("trigger-reset-creat
 //end auth0 Eventemitter Wrap
 })
 
-
+*/
 
 
