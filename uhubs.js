@@ -604,6 +604,7 @@ function handleUpdate () {
 handleUpdate();
 
 
+
 //Enable users to reset a previously submitted create_bucket_form and add a infinite amount of buckets in a row without page refreshing
  
 
