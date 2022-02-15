@@ -535,11 +535,17 @@ function handleUpdate () {
 
       if (updateBucketButton) {
         updateBucketButton.onclick = function(){
+
+          let description = buckets[i].querySelector('.bucket-description')
         
           buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
 
-          buckets[i].querySelector('.bucket-description').innerHTML = buckets[i].querySelector('.bucket-description-input').value
-          if (buckets[i].querySelector('.bucket-description-input').value) {buckets[i].querySelector('.bucket-description').style.display = 'block';}
+          description.innerHTML = buckets[i].querySelector('.bucket-description-input').value
+          if (buckets[i].querySelector('.bucket-description-input').value) {
+            description.style.display = 'block';
+            description.classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');            
+          }
+
 
           buckets[i].querySelector('.bucket-duration').innerHTML = buckets[i].querySelector('.bucket-duration-input').value
           if (buckets[i].querySelector('.bucket-duration-input').value) {buckets[i].querySelector('.duration-container').style.display = 'flex';}
