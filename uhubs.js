@@ -49,7 +49,15 @@
     }
     
 
-
+    for (var n = 0; n < formsToBeReseted.length; n++) {
+      const form = formsToBeReseted[n]
+      console.log(form.querySelector(".trigger-reset-form"))
+      console.log(form.querySelector(".target-reset-form"))
+      console.log(form.querySelector(".permanent-form"))
+      console.log(form.querySelector(".hidden-success-statement")) 
+      
+    }
+    
 
 
 
