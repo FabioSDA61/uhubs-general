@@ -7,8 +7,14 @@
       form.onsubmit = function () {
         console.log('reset triggered')
         //form.querySelector(".target-reset-form").click();
-        form.style.display = "block";
-        form.nextElementSibling.style.display = "none";
+        setTimeout(() => {
+          console.log("timeout elapsed")
+          form.style.display = "block";
+          form.nextElementSibling.style.display = "none";
+          console.log(form.nextElementSibling)
+        }, 500)
+        
+
         /*
         function populateForms() {
           for (let i = 0; i < buckets.length; i++) {
