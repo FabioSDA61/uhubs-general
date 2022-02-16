@@ -22,7 +22,7 @@ function letFormsPersist() {
 
 setTimeout(() => {
   letFormsPersist();
-}, 1000)
+}, 500)
     
     
 
@@ -35,6 +35,31 @@ setTimeout(() => {
 //------------------------------------------------ OLD START
 
 /*
+function letFormsPersist() {
+  const formsToPersist = document.querySelectorAll(".form-to-persist");
+    console.log(formsToPersist);
+    console.log(formsToPersist.length);
+    for (var n = 0; n < formsToPersist.length; n++) {
+      const form = formsToPersist[n]
+      console.log('on submit set')
+      form.onsubmit = function () {
+        console.log('reset triggered')
+        setTimeout(() => {
+          console.log("timeout elapsed")
+          form.style.display = "block";
+          form.nextElementSibling.style.display = "none";
+          console.log(form.nextElementSibling)
+        }, 750)
+        
+      }
+    }
+}
+
+setTimeout(() => {
+  letFormsPersist();
+}, 1000)
+
+
 auth0EventEmitter.addEventListener("ready", () => {
 //start auth0 Eventemitter Wrap  
 
