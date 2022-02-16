@@ -20,7 +20,7 @@ function letFormsPersist() {
     }
 }
 
-document.setTimeout(() => {
+setTimeout(() => {
   letFormsPersist();
 }, 1000)
     
