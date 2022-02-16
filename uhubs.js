@@ -3,10 +3,9 @@
 
     for (var n = 0; n < formsToBeReseted.length; n++) {
       const form = formsToBeReseted[n]
-      form.querySelector(".trigger-reset-form").onclick = function () {
-         console.log('reset triggered')
-        setTimeout(function(){
-          form.querySelector(".target-reset-form").click();
+      form.querySelector(".form-to-be-reseted").onsubmit = function () {
+        console.log('reset triggered')
+        form.querySelector(".target-reset-form").click();
         form.querySelector(".permanent-form").style.display = "block";
         form.querySelector(".hidden-success-statement").style.display = "none";
         function populateForms() {
@@ -47,7 +46,7 @@
       }
         }
         populateForms();
-          }, 500);
+
         
       }
     }
