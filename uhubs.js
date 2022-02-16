@@ -1,5 +1,5 @@
 
-    const formsToPersist = document.getElementsByClassName("form-to-persist");
+    const formsToPersist = document.querySelectorAll("form-to-persist");
     console.log(formsToPersist);
     console.log(formsToPersist.length);
     for (var n = 0; n < formsToPersist.length; n++) {
