@@ -1,6 +1,7 @@
 
     const formsToPersist = document.getElementsByClassName("form-to-persist");
     console.log(formsToPersist);
+    console.log(formsToPersist.length);
     for (var n = 0; n < formsToPersist.length; n++) {
       const form = formsToPersist[n]
       console.log('on submit set')
