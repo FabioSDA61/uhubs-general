@@ -6,8 +6,8 @@
       form.querySelector(".form-to-be-reseted").onsubmit = function () {
         console.log('reset triggered')
         //form.querySelector(".target-reset-form").click();
-        form.querySelector(".permanent-form").style.display = "block";
-        form.querySelector(".hidden-success-statement").style.display = "none";
+        form.style.display = "block";
+        form.nextElementSibling.style.display = "none";
         /*
         function populateForms() {
           for (let i = 0; i < buckets.length; i++) {
