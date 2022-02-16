@@ -14,7 +14,7 @@ function letFormsPersist() {
           form.style.display = "block";
           form.nextElementSibling.style.display = "none";
           console.log(form.nextElementSibling)
-        }, 500)
+        }, 750)
         
       }
     }
