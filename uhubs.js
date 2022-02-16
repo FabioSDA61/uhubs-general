@@ -1,5 +1,7 @@
 
-    const formsToPersist = document.querySelectorAll(".form-to-persist");
+
+function letFormsPersist() {
+  const formsToPersist = document.querySelectorAll(".form-to-persist");
     console.log(formsToPersist);
     console.log(formsToPersist.length);
     for (var n = 0; n < formsToPersist.length; n++) {
@@ -16,6 +18,12 @@
         
       }
     }
+}
+
+document.setTimeout(() => {
+  letFormsPersist();
+}, 1000)
+    
     
 
   
