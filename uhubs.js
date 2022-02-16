@@ -1,3 +1,61 @@
+
+    const formsToBeReseted = document.getElementsByClassName("form-to-be-reseted");
+
+    for (var n = 0; n < formsToBeReseted.length; n++) {
+      const form = formsToBeReseted[n]
+      form.querySelector(".trigger-reset-form").onclick = function () {
+        form.querySelector(".target-reset-form").click();
+        form.querySelector(".permanent-form").style.display = "block";
+        form.querySelector(".hidden-success-statement").style.display = "none";
+        function populateForms() {
+          for (let i = 0; i < buckets.length; i++) {
+        ['.bucket-name',
+        '.bucket-description', 
+        '.bucket-duration', 
+        '.bucket-order',
+        '.bucket-status'].forEach( function (className) {
+          let element = buckets[i].querySelector(className)
+          if (element) {
+            const data = element.innerText;
+            buckets[i].querySelector(className + "-input").value = data;}
+            
+        });
+        
+        for (let a = 1; a < 6; a++) {
+            ['.task-name',
+            '.task-description', 
+            '.task-duration',
+            '.task-link',
+            '.task-type'].forEach( function (classNameTask) {
+              let classNameTaskIteration = classNameTask + "-" + [a].toString()
+              let data = "";
+              const taskElement = buckets[i].querySelector(classNameTaskIteration)
+    
+              if (taskElement) {        
+                if (classNameTask !='.task-link') {
+                  data = buckets[i].querySelector(classNameTaskIteration).innerText;
+                } else {
+                  data = buckets[i].querySelector(classNameTaskIteration).href;
+                }
+                buckets[i].querySelector(classNameTaskIteration + "-input").value = data
+              }
+                  
+            });
+          }
+      }
+        }
+        populateForms();
+      }
+    }
+    
+
+
+
+
+
+
+//------------------------------------------------ OLD START
+
 /*
 auth0EventEmitter.addEventListener("ready", () => {
 //start auth0 Eventemitter Wrap  
