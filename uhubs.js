@@ -3,6 +3,7 @@
 
     for (var n = 0; n < formsToBeReseted.length; n++) {
       const form = formsToBeReseted[n]
+      console.log('on submit set')
       form.querySelector(".form-to-be-reseted").onsubmit = function () {
         console.log('reset triggered')
         //form.querySelector(".target-reset-form").click();
