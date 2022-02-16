@@ -1,8 +1,8 @@
 
-    const formsToBeReseted = document.getElementsByClassName("form-to-be-reseted");
-
-    for (var n = 0; n < formsToBeReseted.length; n++) {
-      const form = formsToBeReseted[n]
+    const formsToPersist = document.getElementsByClassName("form-to-persist");
+    console.log(formsToPersist);
+    for (var n = 0; n < formsToPersist.length; n++) {
+      const form = formsToPersist[n]
       console.log('on submit set')
       form.onsubmit = function () {
         console.log('reset triggered')
