@@ -1,4 +1,9 @@
-     // Populate the update forms of tasks and buckets with the according data
+const buckets = document.getElementsByClassName("bucket");
+
+
+
+
+// Populate the update forms of tasks and buckets with the according data
       function populateForms() {
           for (let i = 0; i < buckets.length; i++) {
         ['.bucket-name',
