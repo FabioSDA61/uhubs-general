@@ -1,12 +1,5 @@
 
     
-
-
-
-
-//------------------------------------------------ OLD START
-
-/*
 function letFormsPersist() {
   const formsToPersist = document.querySelectorAll(".form-to-persist");
     console.log(formsToPersist);
@@ -30,6 +23,13 @@ function letFormsPersist() {
 setTimeout(() => {
   letFormsPersist();
 }, 1000)
+
+
+
+//------------------------------------------------ OLD START
+
+/*
+
 
 
 auth0EventEmitter.addEventListener("ready", () => {
