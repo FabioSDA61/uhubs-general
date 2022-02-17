@@ -416,7 +416,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
           }
         }
             
-        }   
+           
  }
  sortAssignmentsPerBucket();
 }
