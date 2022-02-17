@@ -1,3 +1,128 @@
+     // Populate the update forms of tasks and buckets with the according data
+      function populateForms() {
+          for (let i = 0; i < buckets.length; i++) {
+        ['.bucket-name',
+        '.bucket-description', 
+        '.bucket-duration', 
+        '.bucket-order',
+        '.bucket-status'].forEach( function (className) {
+          let element = buckets[i].querySelector(className)
+          if (element) {
+            const data = element.innerText;
+            buckets[i].querySelector(className + "-input").value = data;}
+            
+        });
+        
+        for (let a = 1; a < 6; a++) {
+            ['.task-name',
+            '.task-description', 
+            '.task-duration',
+            '.task-link',
+            '.task-type'].forEach( function (classNameTask) {
+              let classNameTaskIteration = classNameTask + "-" + [a].toString()
+              let data = "";
+              const taskElement = buckets[i].querySelector(classNameTaskIteration)
+    
+              if (taskElement) {        
+                if (classNameTask !='.task-link') {
+                  data = buckets[i].querySelector(classNameTaskIteration).innerText;
+                } else {
+                  data = buckets[i].querySelector(classNameTaskIteration).href;
+                }
+                buckets[i].querySelector(classNameTaskIteration + "-input").value = data
+              }
+                  
+            });
+          }
+      }
+    }
+    populateForms();
+    
+    
+    // Handle update of buckets and tasks i.e. update tasks and bucket immediately after form submission
+    function handleUpdate () {
+    
+      
+        for (let i = 0; i < buckets.length; i++) {
+    
+          let updateBucketButton = buckets[i].querySelector(".update-bucket-button") 
+    
+          if (updateBucketButton) {
+            updateBucketButton.onclick = function(){
+    
+              let description = buckets[i].querySelector('.bucket-description')
+            
+              buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
+    
+              description.innerHTML = buckets[i].querySelector('.bucket-description-input').value
+              if (buckets[i].querySelector('.bucket-description-input').value) {
+                description.style.display = 'block';
+                description.classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');            
+              }
+    
+    
+              buckets[i].querySelector('.bucket-duration').innerHTML = buckets[i].querySelector('.bucket-duration-input').value
+              if (buckets[i].querySelector('.bucket-duration-input').value) {
+                buckets[i].querySelector('.duration-container').style.display = 'flex';
+                buckets[i].querySelector('.bucket-duration').style.display = 'block';
+                buckets[i].querySelector('.duration-container').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+                buckets[i].querySelector('.bucket-duration').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+                
+              }
+    
+              buckets[i].querySelector('.bucket-order').innerHTML = buckets[i].querySelector('.bucket-order-input').value
+              if (buckets[i].querySelector('.bucket-order-input').value) {
+                buckets[i].querySelector('.order-container').style.display = 'flex';
+                buckets[i].querySelector('.bucket-order').style.display = 'block';
+                buckets[i].querySelector('.order-container').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+                buckets[i].querySelector('.bucket-order').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+              }
+    
+              buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
+              buckets[i].querySelector('.bucket-color').style.backgroundColor = buckets[i].querySelector('.bucket-color-input').value
+              updateBucketButton.closest('.bucket-info-form').previousSibling.click();
+      
+          };
+      
+          for (let a = 1; a < 6; a++) {
+            let selector = ".update-task-button-" + [a].toString();
+            buckets[i].querySelector(selector).onclick = function(){
+              ['.task-name',
+                '.task-description', 
+                '.task-duration',
+                '.task-link',
+                '.task-type'].forEach( function (classNameTask) {
+                    let classNameTaskIteration = classNameTask + "-" + [a].toString()
+                    let data = buckets[i].querySelector(classNameTaskIteration + "-input").value;
+
+                    if (data) {
+                        buckets[i].querySelector(classNameTaskIteration).style.display = 'block';
+                        buckets[i].querySelector(classNameTaskIteration).classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+                      }
+                    
+                    if (classNameTask =='.task-link') {
+                      buckets[i].querySelector(classNameTaskIteration).href = data;
+                    } else if (classNameTask =='.task-type') {
+                      buckets[i].querySelector(classNameTaskIteration).value = data;
+                    } else {
+                      buckets[i].querySelector(classNameTaskIteration).innerText = data;
+                    }
+    
+                    
+                });
+                buckets[i].querySelector(selector).closest('.task-update-form-container').previousSibling.click();
+              }
+            }
+    
+          }
+    
+          
+      };
+    };
+    handleUpdate();
+
+
+
 
     
 function letFormsPersist() {
