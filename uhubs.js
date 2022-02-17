@@ -16,7 +16,7 @@ function letFormsPersist() {
           //form.querySelector('.update-bucket-button').style.opacity = "1"
           //form.querySelector('.update-bucket-button').style.display = "block"
           console.log(form.nextElementSibling)
-        }, 1000)
+        }, 2000)
         
       }
     }
@@ -24,7 +24,7 @@ function letFormsPersist() {
 
 setTimeout(() => {
   letFormsPersist();
-}, 1000)
+}, 2000)
 
 
 
