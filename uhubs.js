@@ -13,8 +13,8 @@ function letFormsPersist() {
           console.log("timeout elapsed")
           form.style.display = "block";
           form.nextElementSibling.style.display = "none";
-          form.querySelector('.update-bucket-button').style.opacity = "1"
-          form.querySelector('.update-bucket-button').style.display = "block"
+          //form.querySelector('.update-bucket-button').style.opacity = "1"
+          //form.querySelector('.update-bucket-button').style.display = "block"
           console.log(form.nextElementSibling)
         }, 1000)
         
