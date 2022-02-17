@@ -400,12 +400,26 @@ for (var n = 0; n < managerBuckets.length; n++) {
         }
 
         for (var b = 0; b < assignedList.length; b++) {
- 
-            let childNode = document.createElement("p")
+            if (assignedList.length == 0) {
+              let childNode = document.createElement("p")
             childNode.className = 'paragraph small no-margin _12px opaque50';
-             childNode.style.marginBottom = '5px';
-            childNode.innerText = assignedList[b]
+            childNode.style.opacity = '0.25'
+            childNode.innerHTML = "none"
             assignedMembersContainer.appendChild(childNode);
+
+            } else if (assignedList.length > 0) {
+              let childNode = document.createElement("p")
+                childNode.innerHTML = "All Team Members"
+                childNode.className = 'paragraph small no-margin _12px opaque50';
+                assignedMembersContainer.appendChild(childNode);
+            } else {
+              let childNode = document.createElement("p")
+              childNode.className = 'paragraph small no-margin _12px opaque50';
+              childNode.style.marginBottom = '5px';
+              childNode.innerText = assignedList[b]
+              assignedMembersContainer.appendChild(childNode);
+            }
+            
         }   
  }
  sortAssignmentsPerBucket();
