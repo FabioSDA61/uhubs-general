@@ -9,7 +9,7 @@ for (let i = 0; i < startDates.length; i++) {
   tomorrow.setMinutes(0);
   tomorrow.setSeconds(0)
   console.log(tomorrow)
-  let dateStringWithTime = moment(tomorrow).format('YYYY-MM-DD HH:MM:SS')
+  let dateStringWithTime = moment(tomorrow).format('YYYY-MM-DD HH:00:00')
   console.log(dateStringWithTime)
   startDate.innerHTML = dateStringWithTime
 }
