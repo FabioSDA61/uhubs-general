@@ -421,7 +421,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
                 */
                 let childNode = document.createElement("p")
                 childNode.innerHTML = "All Team Members"
-                childNode.className = 'paragraph small no-margin bold';
+                childNode.className = 'paragraph small no-margin';
                 assignedMembersContainer.appendChild(childNode);
 
                 createToggleAllButton();
@@ -498,7 +498,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
 
             for (var i = 0; i < assignedList.length; i++) {
                 let childNode = document.createElement("p")
-                childNode.className = 'paragraph small no-margin bold';
+                childNode.className = 'paragraph small no-margin';
                 childNode.style.marginBottom = '5px';
                 childNode.innerText = assignedList[i]
                 assignedMembersContainer.appendChild(childNode);
@@ -525,7 +525,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
             containerChildNode.appendChild(checkboxChildNode);
 
             let childNodeText = document.createElement('p');   
-            childNodeText.className = 'paragraph small no-margin bold';                    
+            childNodeText.className = 'paragraph small no-margin';                    
             childNodeText.innerText = email
             childNodeText.style.paddingLeft = '10px'
             containerChildNode.appendChild(childNodeText);
@@ -557,12 +557,12 @@ for (var n = 0; n < managerBuckets.length; n++) {
         } else if (assignedList.length > 0) {
           let childNode = document.createElement("p")
             childNode.innerHTML = "All Team Members"
-            childNode.className = 'paragraph small no-margin bold';
+            childNode.className = 'paragraph small no-margin';
             assignedMembersContainer.appendChild(childNode);
         } else {
           for (let d = 0; d < notAssignedList.length; d++) {
           let childNode = document.createElement("p")
-          childNode.className = 'paragraph small no-margin bold';
+          childNode.className = 'paragraph small no-margin';
           childNode.style.marginBottom = '5px';
           childNode.innerText = assignedList[b]
           assignedMembersContainer.appendChild(childNode);
