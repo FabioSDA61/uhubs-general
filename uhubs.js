@@ -559,7 +559,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
           let childNode = document.createElement("p")
           childNode.className = 'paragraph small no-margin';
           childNode.style.marginBottom = '5px';
-          childNode.innerText = assignedList[b]
+          childNode.innerText = assignedList[d]
           assignedMembersContainer.appendChild(childNode);
           }
         }
