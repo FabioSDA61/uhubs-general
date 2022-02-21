@@ -91,6 +91,7 @@ for (let i = 0; i < organizerEmails.length; i++) {
               if (buckets[i].querySelector('.bucket-duration-input').value) {
                 buckets[i].querySelector('.duration-container').style.display = 'flex';
                 buckets[i].querySelector('.bucket-duration').style.display = 'block';
+                buckets[i].querySelector('.bucket-duration-empty-statement').style.display = 'none';
                 buckets[i].querySelector('.duration-container').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
                 buckets[i].querySelector('.bucket-duration').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
                 
@@ -98,6 +99,7 @@ for (let i = 0; i < organizerEmails.length; i++) {
     
               buckets[i].querySelector('.bucket-order').innerHTML = buckets[i].querySelector('.bucket-order-input').value
               if (buckets[i].querySelector('.bucket-order-input').value) {
+                buckets[i].querySelector('.bucket-order-empty-statement').style.display = 'none';
                 buckets[i].querySelector('.order-container').style.display = 'flex';
                 buckets[i].querySelector('.bucket-order').style.display = 'block';
                 buckets[i].querySelector('.order-container').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
