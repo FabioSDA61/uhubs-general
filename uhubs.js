@@ -555,7 +555,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
             childNode.className = 'paragraph small no-margin';
             assignedMembersContainer.appendChild(childNode);
         } else {
-          for (let d = 0; d < notAssignedList.length; d++) {
+          for (let d = 0; d < assignedList.length; d++) {
           let childNode = document.createElement("p")
           childNode.className = 'paragraph small no-margin';
           childNode.style.marginBottom = '5px';
