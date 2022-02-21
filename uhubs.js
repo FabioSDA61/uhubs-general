@@ -1,7 +1,19 @@
+
+// set calendar events all to tomorrow 9am
+const startDates = document.getElementsByClassName('addeventatc') 
+for (let i = 0; i < startDates.length; i++) {
+  const startDate = startDates[i].querySelector('.start') 
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate()+1);
+  tomorrow.setHours(9);
+  tomorrow.setMinutes(0);
+  tomorrow.setSeconds(0)
+  let dateStringWithTime = moment(tomorrow).format('YYYY-MM-DD HH:MM:SS')
+  startDate.innerHTML = dateStringWithTime
+}
+
+
 const buckets = document.getElementsByClassName("bucket");
-
-
-
 
 // Populate the update forms of tasks and buckets with the according data
       function populateForms() {
@@ -27,6 +39,10 @@ const buckets = document.getElementsByClassName("bucket");
               let classNameTaskIteration = classNameTask + "-" + [a].toString()
               let data = "";
               const taskElement = buckets[i].querySelector(classNameTaskIteration)
+
+              console.log(a)
+              console.log(classNameTaskIteration)
+              console.log(buckets[i].querySelector('.bucket-name'));
     
               if (taskElement) {        
                 if (classNameTask !='.task-link') {
