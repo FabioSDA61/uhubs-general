@@ -17,12 +17,6 @@ for (let i = 0; i < startDates.length; i++) {
 
 const buckets = document.getElementsByClassName("bucket");
 
-/*
-const organizerEmails = document.getElementsByClassName("organizer_email");
-for (let i = 0; i < organizerEmails.length; i++) {
-  organizerEmails[i].innerHTML = managerEmail
-}
-*/
 
 // Populate the update forms of tasks and buckets with the according data
       function populateForms() {
@@ -554,7 +548,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
         childNode.innerHTML = "none"
         assignedMembersContainer.appendChild(childNode);
 
-        } else if (assignedList.length > 0) {
+        } else if (assignedList.length == allMembers.length) {
           let childNode = document.createElement("p")
             childNode.innerHTML = "All Team Members"
             childNode.className = 'paragraph small no-margin';
