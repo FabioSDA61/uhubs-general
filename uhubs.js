@@ -8,7 +8,9 @@ for (let i = 0; i < startDates.length; i++) {
   tomorrow.setHours(9);
   tomorrow.setMinutes(0);
   tomorrow.setSeconds(0)
+  console.log(tomorrow)
   let dateStringWithTime = moment(tomorrow).format('YYYY-MM-DD HH:MM:SS')
+  console.log(dateStringWithTime)
   startDate.innerHTML = dateStringWithTime
 }
 
