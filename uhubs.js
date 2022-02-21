@@ -16,7 +16,6 @@ for (let i = 0; i < startDates.length; i++) {
 
 
 const buckets = document.getElementsByClassName("bucket");
-const managerEmail = document.getElementById("manager-email"); 
 
 const organizerEmails = document.getElementsByClassName("organizer_email");
 for (let i = 0; i < organizerEmails.length; i++) {
