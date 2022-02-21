@@ -421,7 +421,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
                 */
                 let childNode = document.createElement("p")
                 childNode.innerHTML = "All Team Members"
-                childNode.className = 'paragraph small no-margin _12px opaque50';
+                childNode.className = 'paragraph small no-margin bold';
                 assignedMembersContainer.appendChild(childNode);
 
                 createToggleAllButton();
@@ -498,7 +498,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
 
             for (var i = 0; i < assignedList.length; i++) {
                 let childNode = document.createElement("p")
-                childNode.className = 'paragraph small no-margin _12px opaque50';
+                childNode.className = 'paragraph small no-margin bold';
                 childNode.style.marginBottom = '5px';
                 childNode.innerText = assignedList[i]
                 assignedMembersContainer.appendChild(childNode);
@@ -525,7 +525,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
             containerChildNode.appendChild(checkboxChildNode);
 
             let childNodeText = document.createElement('p');   
-            childNodeText.className = 'paragraph small no-margin _12px opaque50';                    
+            childNodeText.className = 'paragraph small no-margin bold';                    
             childNodeText.innerText = email
             childNodeText.style.paddingLeft = '10px'
             containerChildNode.appendChild(childNodeText);
@@ -549,20 +549,20 @@ for (var n = 0; n < managerBuckets.length; n++) {
         
         if (assignedList.length == 0) {
           let childNode = document.createElement("p")
-        childNode.className = 'paragraph small no-margin _12px opaque50';
-        childNode.style.opacity = '0.25'
+        childNode.className = 'paragraph small no-margin';
+        childNode.style.opacity = '0.2'
         childNode.innerHTML = "none"
         assignedMembersContainer.appendChild(childNode);
 
         } else if (assignedList.length > 0) {
           let childNode = document.createElement("p")
             childNode.innerHTML = "All Team Members"
-            childNode.className = 'paragraph small no-margin _12px opaque50';
+            childNode.className = 'paragraph small no-margin bold';
             assignedMembersContainer.appendChild(childNode);
         } else {
           for (let d = 0; d < notAssignedList.length; d++) {
           let childNode = document.createElement("p")
-          childNode.className = 'paragraph small no-margin _12px opaque50';
+          childNode.className = 'paragraph small no-margin bold';
           childNode.style.marginBottom = '5px';
           childNode.innerText = assignedList[b]
           assignedMembersContainer.appendChild(childNode);
