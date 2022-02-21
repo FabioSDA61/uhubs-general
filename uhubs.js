@@ -8,9 +8,7 @@ for (let i = 0; i < startDates.length; i++) {
   tomorrow.setHours(9);
   tomorrow.setMinutes(0);
   tomorrow.setSeconds(0)
-  console.log(tomorrow)
   let dateStringWithTime = moment(tomorrow).format('YYYY-MM-DD HH:00:00')
-  console.log(dateStringWithTime)
   startDate.innerHTML = dateStringWithTime
 }
 
@@ -42,10 +40,6 @@ const buckets = document.getElementsByClassName("bucket");
               let data = "";
               const taskElement = buckets[i].querySelector(classNameTaskIteration)
 
-              console.log(a)
-              console.log(classNameTaskIteration)
-              console.log(buckets[i].querySelector('.bucket-name'));
-    
               if (taskElement) {        
                 if (classNameTask !='.task-link') {
                   data = buckets[i].querySelector(classNameTaskIteration).innerText;
