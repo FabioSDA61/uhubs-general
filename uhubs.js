@@ -347,6 +347,7 @@ for (var n = 0; n < managerBuckets.length; n++) {
         if (bucket.querySelector('.assigned-team-members')) {
          assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(', ') : [];
        } 
+       console.log(assignedList)
         let notAssignedList = [];
         let assignedMembersContainer = bucket.querySelector('.assigned-members-container');
         let allMembersContainer = bucket.querySelector('.all-members-container');
