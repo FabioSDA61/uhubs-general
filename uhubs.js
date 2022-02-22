@@ -10,6 +10,7 @@ let allMembers = [];
 
 
 document.getElementById('trigger-edit-view-button').onclick = function (){ 
+  console.log('click')
   document.getElementById('target-edit-view-button').click();
 };
 
