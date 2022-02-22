@@ -9,6 +9,10 @@ let allMembers = [];
  }
 
 
+document.getElementById('trigger-edit-view-button').onclick = function (){ 
+  document.getElementById('target-edit-view-button').click();
+};
+
 // set calendar events all to tomorrow 9am
 const startDates = document.getElementsByClassName('addeventatc') 
 for (let i = 0; i < startDates.length; i++) {
