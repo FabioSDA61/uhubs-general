@@ -1,4 +1,12 @@
-
+// global info 
+let managerBuckets = document.querySelectorAll('.edit-view-bucket');
+let previewBuckets = document.querySelectorAll('.preview-view-bucket');
+let allMembers = [];
+ let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
+ for (var i = 0; i < hiddenEmails.length; i++) {
+     let email = hiddenEmails[i].innerText;
+     allMembers.push(email);
+ }
 
 
 // set calendar events all to tomorrow 9am
@@ -20,16 +28,16 @@ const buckets = document.getElementsByClassName("bucket");
 
 // Populate the update forms of tasks and buckets with the according data
       function populateForms() {
-          for (let i = 0; i < buckets.length; i++) {
+          for (let i = 0; i < managerBuckets.length; i++) {
         ['.bucket-name',
         '.bucket-description', 
         '.bucket-duration', 
         '.bucket-order',
         '.bucket-status'].forEach( function (className) {
-          let element = buckets[i].querySelector(className)
+          let element = managerBuckets[i].querySelector(className)
           if (element) {
             const data = element.innerText;
-            buckets[i].querySelector(className + "-input").value = data;}
+            managerBuckets[i].querySelector(className + "-input").value = data;}
             
         });
         
@@ -41,21 +49,19 @@ const buckets = document.getElementsByClassName("bucket");
             '.task-type'].forEach( function (classNameTask) {
               let classNameTaskIteration = classNameTask + "-" + [a].toString()
               let data = "";
-              const taskElement = buckets[i].querySelector(classNameTaskIteration)
+              const taskElement = managerBuckets[i].querySelector(classNameTaskIteration)
 
               if (taskElement) {        
                 if (classNameTask !='.task-link') {
-                  data = buckets[i].querySelector(classNameTaskIteration).innerText;
-                  buckets[i].querySelector(classNameTaskIteration + "-input").value = data
+                  data = managerBuckets[i].querySelector(classNameTaskIteration).innerText;
+                  managerBuckets[i].querySelector(classNameTaskIteration + "-input").value = data
                 } else {
-                  data = buckets[i].querySelector(classNameTaskIteration).href;
+                  data = managerBuckets[i].querySelector(classNameTaskIteration).href;
                   
                   if ( !data.includes("home-profile")) {
-                    buckets[i].querySelector(classNameTaskIteration + "-input").value = data 
+                    managerBuckets[i].querySelector(classNameTaskIteration + "-input").value = data 
                   } else {
-                    console.log(data)
                     data = null
-                    console.log(data)
                   }
                  
                 }
@@ -73,77 +79,77 @@ const buckets = document.getElementsByClassName("bucket");
     function handleUpdate () {
     
       
-        for (let i = 0; i < buckets.length; i++) {
+        for (let i = 0; i < managerBuckets.length; i++) {
     
-          let updateBucketButton = buckets[i].querySelector(".update-bucket-button") 
+          let updateBucketButton = managerBuckets[i].querySelector(".update-bucket-button") 
     
           if (updateBucketButton) {
             updateBucketButton.onclick = function(){
     
-              let description = buckets[i].querySelector('.bucket-description')
+              let description = managerBuckets[i].querySelector('.bucket-description')
             
-              buckets[i].querySelector('.bucket-name').innerHTML = buckets[i].querySelector('.bucket-name-input').value
+              managerBuckets[i].querySelector('.bucket-name').innerHTML = managerBuckets[i].querySelector('.bucket-name-input').value
     
-              description.innerHTML = buckets[i].querySelector('.bucket-description-input').value
-              if (buckets[i].querySelector('.bucket-description-input').value) {
+              description.innerHTML = managerBuckets[i].querySelector('.bucket-description-input').value
+              if (managerBuckets[i].querySelector('.bucket-description-input').value) {
                 description.style.display = 'block';
                 description.classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');            
               }
     
     
-              buckets[i].querySelector('.bucket-duration').innerHTML = buckets[i].querySelector('.bucket-duration-input').value
-              if (buckets[i].querySelector('.bucket-duration-input').value) {
-                buckets[i].querySelector('.duration-container').style.display = 'flex';
-                buckets[i].querySelector('.bucket-duration').style.display = 'block';
-                buckets[i].querySelector('.bucket-duration-empty-statement').style.display = 'none';
-                buckets[i].querySelector('.duration-container').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
-                buckets[i].querySelector('.bucket-duration').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+              managerBuckets[i].querySelector('.bucket-duration').innerHTML = managerBuckets[i].querySelector('.bucket-duration-input').value
+              if (managerBuckets[i].querySelector('.bucket-duration-input').value) {
+                managerBuckets[i].querySelector('.duration-container').style.display = 'flex';
+                managerBuckets[i].querySelector('.bucket-duration').style.display = 'block';
+                managerBuckets[i].querySelector('.bucket-duration-empty-statement').style.display = 'none';
+                managerBuckets[i].querySelector('.duration-container').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+                managerBuckets[i].querySelector('.bucket-duration').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
                 
               }
     
-              buckets[i].querySelector('.bucket-order').innerHTML = buckets[i].querySelector('.bucket-order-input').value
-              if (buckets[i].querySelector('.bucket-order-input').value) {
-                buckets[i].querySelector('.bucket-order-empty-statement').style.display = 'none';
-                buckets[i].querySelector('.order-container').style.display = 'flex';
-                buckets[i].querySelector('.bucket-order').style.display = 'block';
-                buckets[i].querySelector('.order-container').classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
-                buckets[i].querySelector('.bucket-order').classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
+              managerBuckets[i].querySelector('.bucket-order').innerHTML = managerBuckets[i].querySelector('.bucket-order-input').value
+              if (managerBuckets[i].querySelector('.bucket-order-input').value) {
+                managerBuckets[i].querySelector('.bucket-order-empty-statement').style.display = 'none';
+                managerBuckets[i].querySelector('.order-container').style.display = 'flex';
+                managerBuckets[i].querySelector('.bucket-order').style.display = 'block';
+                managerBuckets[i].querySelector('.order-container').classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
+                managerBuckets[i].querySelector('.bucket-order').classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
               }
     
-              buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
-              buckets[i].querySelector('.bucket-color').style.backgroundColor = buckets[i].querySelector('.bucket-color-input').value
+              managerBuckets[i].querySelector('.bucket-status').innerHTML = managerBuckets[i].querySelector('.bucket-status-input').value
+              managerBuckets[i].querySelector('.bucket-color').style.backgroundColor = managerBuckets[i].querySelector('.bucket-color-input').value
               updateBucketButton.closest('.bucket-info-form').previousSibling.click();
       
           };
       
           for (let a = 1; a < 6; a++) {
             let selector = ".update-task-button-" + [a].toString();
-            buckets[i].querySelector(selector).onclick = function(){
+            managerBuckets[i].querySelector(selector).onclick = function(){
               ['.task-name',
                 '.task-description', 
                 '.task-duration',
                 '.task-link',
                 '.task-type'].forEach( function (classNameTask) {
                     let classNameTaskIteration = classNameTask + "-" + [a].toString()
-                    let data = buckets[i].querySelector(classNameTaskIteration + "-input").value;
+                    let data = managerBuckets[i].querySelector(classNameTaskIteration + "-input").value;
 
                     if (data) {
-                        buckets[i].querySelector(classNameTaskIteration).style.display = 'block!important';
-                        buckets[i].querySelector(classNameTaskIteration).classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
+                      managerBuckets[i].querySelector(classNameTaskIteration).style.display = 'block!important';
+                      managerBuckets[i].querySelector(classNameTaskIteration).classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
                       }
                     
                     if (classNameTask =='.task-link') {
-                      buckets[i].querySelector(classNameTaskIteration).href = data;
-                      buckets[i].querySelector(classNameTaskIteration).setAttribute("target", "_blank");
+                      managerBuckets[i].querySelector(classNameTaskIteration).href = data;
+                      managerBuckets[i].querySelector(classNameTaskIteration).setAttribute("target", "_blank");
                     } else if (classNameTask =='.task-type') {
-                      buckets[i].querySelector(classNameTaskIteration).value = data;
+                      managerBuckets[i].querySelector(classNameTaskIteration).value = data;
                     } else {
-                      buckets[i].querySelector(classNameTaskIteration).innerText = data;
+                      managerBuckets[i].querySelector(classNameTaskIteration).innerText = data;
                     }
     
                     
                 });
-                buckets[i].querySelector(selector).closest('.task-update-form-container').previousSibling.click();
+                managerBuckets[i].querySelector(selector).closest('.task-update-form-container').previousSibling.click();
               }
             }
     
@@ -177,16 +183,6 @@ setTimeout(() => {
 }, 2000)
 
 
-
-// global info 
-let managerBuckets = document.querySelectorAll('.edit-view-bucket');
-let previewBuckets = document.querySelectorAll('.preview-view-bucket');
-let allMembers = [];
- let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
- for (var i = 0; i < hiddenEmails.length; i++) {
-     let email = hiddenEmails[i].innerText;
-     allMembers.push(email);
- }
 
 
 
