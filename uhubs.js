@@ -134,6 +134,7 @@ const buckets = document.getElementsByClassName("bucket");
                     
                     if (classNameTask =='.task-link') {
                       buckets[i].querySelector(classNameTaskIteration).href = data;
+                      buckets[i].querySelector(classNameTaskIteration).setAttribute("target", "_blank");
                     } else if (classNameTask =='.task-type') {
                       buckets[i].querySelector(classNameTaskIteration).value = data;
                     } else {
