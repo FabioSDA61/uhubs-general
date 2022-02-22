@@ -56,7 +56,7 @@ const buckets = document.getElementsByClassName("bucket");
           }
       }
     }
-    populateForms();
+    //populateForms();
     
     
     // Handle update of buckets and tasks i.e. update tasks and bucket immediately after form submission
