@@ -106,8 +106,8 @@ const buckets = document.getElementsByClassName("bucket");
                 buckets[i].querySelector('.bucket-order-empty-statement').style.display = 'none';
                 buckets[i].querySelector('.order-container').style.display = 'flex';
                 buckets[i].querySelector('.bucket-order').style.display = 'block';
-                buckets[i].querySelector('.order-container').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
-                buckets[i].querySelector('.bucket-order').classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+                buckets[i].querySelector('.order-container').classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
+                buckets[i].querySelector('.bucket-order').classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
               }
     
               buckets[i].querySelector('.bucket-status').innerHTML = buckets[i].querySelector('.bucket-status-input').value
@@ -128,8 +128,8 @@ const buckets = document.getElementsByClassName("bucket");
                     let data = buckets[i].querySelector(classNameTaskIteration + "-input").value;
 
                     if (data) {
-                        buckets[i].querySelector(classNameTaskIteration).style.display = 'block';
-                        buckets[i].querySelector(classNameTaskIteration).classList.remove('w-dyn-bind-empty', '.w-condition-invisible', '.w-dyn-hide');
+                        buckets[i].querySelector(classNameTaskIteration).style.display = 'block!important';
+                        buckets[i].querySelector(classNameTaskIteration).classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
                       }
                     
                     if (classNameTask =='.task-link') {
