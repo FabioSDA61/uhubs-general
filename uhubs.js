@@ -49,7 +49,7 @@ const buckets = document.getElementsByClassName("bucket");
                   buckets[i].querySelector(classNameTaskIteration + "-input").value = data
                 } else {
                   data = buckets[i].querySelector(classNameTaskIteration).href;
-                  data != "" ?  buckets[i].querySelector(classNameTaskIteration + "-input").value = data : null;
+                  if (data != "") {buckets[i].querySelector(classNameTaskIteration + "-input").value = data };
                   console.log(data)
                 }
                 
