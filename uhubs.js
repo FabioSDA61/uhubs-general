@@ -49,7 +49,7 @@ const buckets = document.getElementsByClassName("bucket");
                   buckets[i].querySelector(classNameTaskIteration + "-input").value = data
                 } else {
                   data = buckets[i].querySelector(classNameTaskIteration).href;
-                  if (data != "") {buckets[i].querySelector(classNameTaskIteration + "-input").value = data };
+                  if (data != "#") {buckets[i].querySelector(classNameTaskIteration + "-input").value = data };
                   console.log(data)
                 }
                 
@@ -350,7 +350,6 @@ for (var n = 0; n < managerBuckets.length; n++) {
         if (bucket.querySelector('.assigned-team-members')) {
          assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(',') : [];
        } 
-       console.log(assignedList)
         let notAssignedList = [];
         let assignedMembersContainer = bucket.querySelector('.assigned-members-container');
         let allMembersContainer = bucket.querySelector('.all-members-container');
