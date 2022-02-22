@@ -180,6 +180,7 @@ setTimeout(() => {
 
 // global info 
 let managerBuckets = document.querySelectorAll('.edit-view-bucket');
+let previewBuckets = document.querySelectorAll('.preview-view-bucket');
 let allMembers = [];
  let hiddenEmails = document.querySelectorAll('.team-member-email-hidden')
  for (var i = 0; i < hiddenEmails.length; i++) {
@@ -205,10 +206,6 @@ let allMembers = [];
 
    hiddenInputAssigned.value = assignedList.join(', ');
    hiddenInputUnassigned.value = notAssignedList.join(', ');
-
-   
-
-
 
 
    //toggle assign-all button of and delete-all on if all members are already invited
@@ -579,6 +576,55 @@ for (var n = 0; n < managerBuckets.length; n++) {
  sortAssignmentsPerBucket();
 }
 
+for (var n = 0; n < previewBuckets.length; n++) {
+
+  function previewBucketAssignments() {
+ 
+         // bucket state
+         const bucket = previewBuckets[n]
+         let assignedList = [];
+         if (bucket.querySelector('.assigned-team-members')) {
+          assignedList = bucket.querySelector('.assigned-team-members').innerText ? bucket.querySelector('.assigned-team-members').innerText.split(',') : [];
+        } 
+         let notAssignedList = [];
+         let assignedMembersContainer = bucket.querySelector('.assigned-members-container');
+         let allMembersContainer = bucket.querySelector('.all-members-container');
+         //add not assignement members to noAssignedList
+         for (var a = 0; a < allMembers.length; a++) {
+             if (!assignedList.includes(allMembers[a])) {
+                 notAssignedList.push(allMembers[a])
+             }
+         }
+        
+         //initialPopulation
+
+         
+         if (assignedList.length == 0) {
+           let childNode = document.createElement("p")
+         childNode.className = 'paragraph small no-margin';
+         childNode.style.opacity = '0.2'
+         childNode.innerHTML = "none"
+         assignedMembersContainer.appendChild(childNode);
+ 
+         } else if (assignedList.length == allMembers.length) {
+           let childNode = document.createElement("p")
+             childNode.innerHTML = "All Team Members"
+             childNode.className = 'paragraph small no-margin';
+             assignedMembersContainer.appendChild(childNode);
+         } else {
+           for (let d = 0; d < assignedList.length; d++) {
+           let childNode = document.createElement("p")
+           childNode.className = 'paragraph small no-margin';
+           childNode.style.marginBottom = '5px';
+           childNode.innerText = assignedList[d]
+           assignedMembersContainer.appendChild(childNode);
+           }
+         }
+             
+            
+  }
+  previewBucketAssignments();
+ }
 
 //------------------------------------------------ OLD START
 
