@@ -50,6 +50,7 @@ const buckets = document.getElementsByClassName("bucket");
                 } else {
                   data = buckets[i].querySelector(classNameTaskIteration).href;
                   data != "" ?  buckets[i].querySelector(classNameTaskIteration + "-input").value = data : null;
+                  console.log(data)
                 }
                 
               }
