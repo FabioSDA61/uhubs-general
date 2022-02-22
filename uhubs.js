@@ -46,10 +46,12 @@ const buckets = document.getElementsByClassName("bucket");
               if (taskElement) {        
                 if (classNameTask !='.task-link') {
                   data = buckets[i].querySelector(classNameTaskIteration).innerText;
+                  buckets[i].querySelector(classNameTaskIteration + "-input").value = data
                 } else {
                   data = buckets[i].querySelector(classNameTaskIteration).href;
+                  data != "" ?  buckets[i].querySelector(classNameTaskIteration + "-input").value = data : null;
                 }
-                buckets[i].querySelector(classNameTaskIteration + "-input").value = data
+                
               }
                   
             });
