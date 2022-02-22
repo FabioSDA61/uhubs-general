@@ -50,7 +50,7 @@ const buckets = document.getElementsByClassName("bucket");
                 } else {
                   data = buckets[i].querySelector(classNameTaskIteration).href;
                   
-                  if (data != "#") {
+                  if ( data.includes("home-profile")) {
                     buckets[i].querySelector(classNameTaskIteration + "-input").value = data 
                   } else {
                     console.log(data)
