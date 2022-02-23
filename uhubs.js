@@ -205,8 +205,8 @@ setTimeout(() => {
    let hiddenInputAssigned = bucket.querySelector('.assigned-input');
    let hiddenInputUnassigned = bucket.querySelector('.unassigned-input');
 
-   hiddenInputAssigned.value = assignedList.join(', ');
-   hiddenInputUnassigned.value = notAssignedList.join(', ');
+   hiddenInputAssigned.value = assignedList.join(',');
+   hiddenInputUnassigned.value = notAssignedList.join(',');
 
 
    //toggle assign-all button of and delete-all on if all members are already invited
@@ -245,7 +245,7 @@ setTimeout(() => {
            allMembersContainer.innerHTML = '';
            hiddenInputAssigned.value = '';
            hiddenInputUnassigned.value = '';
-           hiddenInputAssigned.value = assignedList.join(', ')
+           hiddenInputAssigned.value = assignedList.join(',')
 
            for (let d = 0; d < assignedList.length; d++) {
                createMemberToggler(assignedList[d]);
@@ -405,9 +405,9 @@ for (var n = 0; n < managerBuckets.length; n++) {
                 allMembersContainer.innerHTML = '';
 
                 hiddenInputAssigned.value = '';
-                hiddenInputAssigned.value = assignedList.join(', ')
+                hiddenInputAssigned.value = assignedList.join(',')
                 hiddenInputUnassigned.value = '';
-                hiddenInputUnassigned.value = notAssignedList.join(', ')
+                hiddenInputUnassigned.value = notAssignedList.join(',')
 
                 for (let d = 0; d < assignedList.length; d++) {
                     createMemberToggler(assignedList[d]);
@@ -443,9 +443,9 @@ for (var n = 0; n < managerBuckets.length; n++) {
             allMembersContainer.innerHTML = '';
    
             hiddenInputAssigned.value = '';
-            hiddenInputAssigned.value = assignedList.join(', ')
+            hiddenInputAssigned.value = assignedList.join(',')
             hiddenInputUnassigned.value = '';
-            hiddenInputUnassigned.value = notAssignedList.join(', ')
+            hiddenInputUnassigned.value = notAssignedList.join(',')
 
             for (let d = 0; d < notAssignedList.length; d++) {
                 createMemberToggler(notAssignedList[d]);
@@ -494,9 +494,9 @@ for (var n = 0; n < managerBuckets.length; n++) {
             assignedMembersContainer.innerHTML = '';
 
             hiddenInputAssigned.value = '';
-            hiddenInputAssigned.value = assignedList.join(', ')
+            hiddenInputAssigned.value = assignedList.join(',')
             hiddenInputUnassigned.value = '';
-            hiddenInputUnassigned.value = notAssignedList.join(', ')
+            hiddenInputUnassigned.value = notAssignedList.join(',')
 
 
             for (var i = 0; i < assignedList.length; i++) {
@@ -538,8 +538,8 @@ for (var n = 0; n < managerBuckets.length; n++) {
 
         //initialPopulation
 
-        hiddenInputAssigned.value = assignedList.join(', ');
-        hiddenInputUnassigned.value = notAssignedList.join(', ');
+        hiddenInputAssigned.value = assignedList.join(',');
+        hiddenInputUnassigned.value = notAssignedList.join(',');
 
         for (let d = 0; d < assignedList.length; d++) {
             createMemberToggler(assignedList[d]);
