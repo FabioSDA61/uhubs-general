@@ -8,6 +8,10 @@ let allMembers = [];
      allMembers.push(email);
  }
 
+ let calendars = document.querySelectorAll('.addeventatc');
+ for (var i = 0; i < calendars.length; i++) {
+  calendars[i].style.zIndex = "93"
+}
 
 document.getElementById('trigger-edit-view-button').onclick = function (){ 
   console.log('click')
