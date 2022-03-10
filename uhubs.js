@@ -85,7 +85,7 @@ const buckets = document.getElementsByClassName("bucket");
     
     
     // Handle update of buckets and tasks i.e. update tasks and bucket immediately after form submission
-    /*
+    
     function handleUpdate () {
     
       
@@ -170,7 +170,7 @@ const buckets = document.getElementsByClassName("bucket");
     };
     handleUpdate();
 
-*/
+
 
 
     
