@@ -90,6 +90,12 @@ const buckets = document.getElementsByClassName("bucket");
     
       
         for (let i = 0; i < managerBuckets.length; i++) {
+
+          let eventProperties = { collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}', }
+          window.getEventProperties(eventProperties)
+                .then(function(response) {
+                    amplitude.getInstance().logEvent('bucket_updated', response);
+                })
     
           let updateBucketButton = managerBuckets[i].querySelector(".update-bucket-button") 
     
@@ -135,6 +141,12 @@ const buckets = document.getElementsByClassName("bucket");
           for (let a = 1; a < 6; a++) {
             let selector = ".update-task-button-" + [a].toString();
             managerBuckets[i].querySelector(selector).onclick = function(){
+
+              let eventProperties = { collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}', }
+              window.getEventProperties(eventProperties)
+                    .then(function(response) {
+                        amplitude.getInstance().logEvent('bucket_updated', response);
+                    })
               ['.task-name',
                 '.task-description', 
                 '.task-duration',
