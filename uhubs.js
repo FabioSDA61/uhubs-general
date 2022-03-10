@@ -91,17 +91,19 @@ const buckets = document.getElementsByClassName("bucket");
       
         for (let i = 0; i < managerBuckets.length; i++) {
 
-          let eventProperties = { collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}', }
-          window.getEventProperties(eventProperties)
-                .then(function(response) {
-                    amplitude.getInstance().logEvent('bucket_updated', response);
-                })
+          
     
           let updateBucketButton = managerBuckets[i].querySelector(".update-bucket-button") 
     
           if (updateBucketButton) {
             updateBucketButton.onclick = function(){
-    
+              console.log('bucket_updated')
+              let eventProperties = { collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}', }
+              window.getEventProperties(eventProperties)
+                .then(function(response) {
+                    amplitude.getInstance().logEvent('bucket_updated', response);
+                })
+
               let description = managerBuckets[i].querySelector('.bucket-description')
             
               managerBuckets[i].querySelector('.bucket-name').innerHTML = managerBuckets[i].querySelector('.bucket-name-input').value
