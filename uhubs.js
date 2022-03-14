@@ -154,7 +154,7 @@ const buckets = document.getElementsByClassName("bucket");
                }
               window.getEventProperties(eventProperties)
                     .then(function(response) {
-                        amplitude.getInstance().logEvent('bucket_updated', response);
+                        amplitude.getInstance().logEvent('task_updated', response);
                     })
               ['.task-name',
                 '.task-description', 
