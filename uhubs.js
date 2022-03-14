@@ -94,11 +94,14 @@ const buckets = document.getElementsByClassName("bucket");
           
     
           let updateBucketButton = managerBuckets[i].querySelector(".update-bucket-button") 
-    
+          let bucketId = managerBuckets[i].querySelector(".bucket-id").innerText;
           if (updateBucketButton) {
             updateBucketButton.onclick = function(){
               console.log('bucket_updated')
-              let eventProperties = { collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}', }
+              let eventProperties = { 
+                collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}',
+                bucket_id : bucketId
+                }
               window.getEventProperties(eventProperties)
                 .then(function(response) {
                     amplitude.getInstance().logEvent('bucket_updated', response);
@@ -144,7 +147,11 @@ const buckets = document.getElementsByClassName("bucket");
             let selector = ".update-task-button-" + [a].toString();
             managerBuckets[i].querySelector(selector).onclick = function(){
 
-              let eventProperties = { collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}', }
+              let eventProperties = { 
+                collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}',
+                bucket_id : bucketId,
+                task_number: [a]
+               }
               window.getEventProperties(eventProperties)
                     .then(function(response) {
                         amplitude.getInstance().logEvent('bucket_updated', response);
