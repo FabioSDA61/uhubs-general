@@ -147,6 +147,7 @@ const buckets = document.getElementsByClassName("bucket");
             let selector = ".update-task-button-" + [a].toString();
             managerBuckets[i].querySelector(selector).onclick = function(){
               console.log(a)
+              console.log(managerBuckets[i])
               
               ['.task-name',
                 '.task-description', 
