@@ -147,15 +147,7 @@ const buckets = document.getElementsByClassName("bucket");
             let selector = ".update-task-button-" + [a].toString();
             managerBuckets[i].querySelector(selector).onclick = function(){
               console.log(a)
-              let eventProperties = { 
-                collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}',
-                bucket_id : bucketId,
-                task_number: [a]
-               }
-              window.getEventProperties(eventProperties)
-                    .then(function(response) {
-                        amplitude.getInstance().logEvent('task_updated', response);
-                    })
+              
               ['.task-name',
                 '.task-description', 
                 '.task-duration',
@@ -182,6 +174,15 @@ const buckets = document.getElementsByClassName("bucket");
                     
                 });
                 managerBuckets[i].querySelector(selector).closest('.task-update-form-container').previousSibling.click();
+                let eventProperties = { 
+                  collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}',
+                  bucket_id : bucketId,
+                  task_number: [a]
+                 }
+                window.getEventProperties(eventProperties)
+                      .then(function(response) {
+                          amplitude.getInstance().logEvent('task_updated', response);
+                      })
               }
             }
     
