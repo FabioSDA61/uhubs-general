@@ -148,10 +148,11 @@ const buckets = document.getElementsByClassName("bucket");
             managerBuckets[i].querySelector(selector).onclick = function(){
               console.log(a)
               
-              ['.task-name',
-                '.task-description', 
-                '.task-duration'
-                ].forEach( function (classNameTask) {
+              ['task-name',
+                'task-description', 
+                'task-duration',
+                'task-link',
+                'task-type'].forEach( function (classNameTask) {
                     let classNameTaskIteration = classNameTask + "-" + [a].toString()
                     console.log(classNameTaskIteration)
                     let data = managerBuckets[i].querySelector(classNameTaskIteration + "-input").value;
@@ -161,10 +162,10 @@ const buckets = document.getElementsByClassName("bucket");
                       managerBuckets[i].querySelector(classNameTaskIteration).classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
                       }
                     
-                    if (classNameTask =='.task-link') {
+                    if (classNameTask =='task-link') {
                       managerBuckets[i].querySelector(classNameTaskIteration).href = data;
                       managerBuckets[i].querySelector(classNameTaskIteration).setAttribute("target", "_blank");
-                    } else if (classNameTask =='.task-type') {
+                    } else if (classNameTask =='task-type') {
                       managerBuckets[i].querySelector(classNameTaskIteration).value = data;
                     } else {
                       managerBuckets[i].querySelector(classNameTaskIteration).innerText = data;
