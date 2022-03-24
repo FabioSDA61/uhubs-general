@@ -174,37 +174,7 @@ const buckets = document.getElementsByClassName("bucket");
               update('.task-duration');
               update('.task-link');
               update('.task-type');
-//             managerBuckets[i].querySelector('.task-name-1').innerText = managerBuckets[i].querySelector('.task-name-1-input').value
-
-
-              /*
-              ['.task-name',
-                '.task-description', 
-                '.task-duration',
-                '.task-link',
-                '.task-type'].forEach( function (classNameTask) {
-                    let classNameTaskIteration = classNameTask + "-" + [a].toString()
-                    console.log(classNameTaskIteration)
-                    let data = managerBuckets[i].querySelector(classNameTaskIteration + "-input").value;
-
-                    if (data) {
-                      managerBuckets[i].querySelector(classNameTaskIteration).style.display = 'block!important';
-                      managerBuckets[i].querySelector(classNameTaskIteration).classList.remove('w-dyn-bind-empty', 'w-condition-invisible', 'w-dyn-hide');
-                      }
-                    
-                    if (classNameTask =='.task-link') {
-                      managerBuckets[i].querySelector(classNameTaskIteration).href = data;
-                      managerBuckets[i].querySelector(classNameTaskIteration).setAttribute("target", "_blank");
-                    } else if (classNameTask =='.task-type') {
-                      managerBuckets[i].querySelector(classNameTaskIteration).value = data;
-                    } else {
-                      managerBuckets[i].querySelector(classNameTaskIteration).innerText = data;
-                    }
-    
-                    
-                });
-
-                */
+              
                 managerBuckets[i].querySelector(selector).closest('.task-update-form-container').previousSibling.click();
                 let eventProperties = { 
                   collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}',
