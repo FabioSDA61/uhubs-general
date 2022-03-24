@@ -148,7 +148,10 @@ const buckets = document.getElementsByClassName("bucket");
             managerBuckets[i].querySelector(selector).onclick = function(){
               console.log(a)
               console.log(managerBuckets[i])
-              
+
+              managerBuckets[i].querySelector('.task-name-1-input').value = managerBuckets[i].querySelector('.task-name-1').innerText
+
+
               /*
               ['.task-name',
                 '.task-description', 
