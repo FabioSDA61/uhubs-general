@@ -151,8 +151,8 @@ const buckets = document.getElementsByClassName("bucket");
               ['.task-name',
                 '.task-description', 
                 '.task-duration',
-                '.task-link',
-                '.task-type'].forEach( function (classNameTask) {
+                '.task-link'
+                ].forEach( function (classNameTask) {
                     let classNameTaskIteration = classNameTask + "-" + [a].toString()
                     console.log(classNameTaskIteration)
                     let data = managerBuckets[i].querySelector(classNameTaskIteration + "-input").value;
