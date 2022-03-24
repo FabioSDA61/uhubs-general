@@ -150,8 +150,7 @@ const buckets = document.getElementsByClassName("bucket");
               
               ['.task-name',
                 '.task-description', 
-                '.task-duration',
-                '.task-link'
+                '.task-duration'
                 ].forEach( function (classNameTask) {
                     let classNameTaskIteration = classNameTask + "-" + [a].toString()
                     console.log(classNameTaskIteration)
