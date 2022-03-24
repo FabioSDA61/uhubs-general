@@ -162,6 +162,7 @@ const buckets = document.getElementsByClassName("bucket");
                 '.task-link',
                 '.task-type'].forEach( function (classNameTask) {
                     let classNameTaskIteration = classNameTask + "-" + [a].toString()
+                    console.log(classNameTaskIteration)
                     let data = managerBuckets[i].querySelector(classNameTaskIteration + "-input").value;
 
                     if (data) {
