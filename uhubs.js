@@ -149,7 +149,7 @@ const buckets = document.getElementsByClassName("bucket");
               console.log(a)
               console.log(managerBuckets[i])
 
-              managerBuckets[i].querySelector('.task-name-1-input').value = managerBuckets[i].querySelector('.task-name-1').innerText
+              managerBuckets[i].querySelector('.task-name-1').innerText = managerBuckets[i].querySelector('.task-name-1-input').value
 
 
               /*
