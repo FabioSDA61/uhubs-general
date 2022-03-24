@@ -146,7 +146,7 @@ const buckets = document.getElementsByClassName("bucket");
           for (let a = 1; a < 6; a++) {
             let selector = ".update-task-button-" + [a].toString();
             managerBuckets[i].querySelector(selector).onclick = function(){
-
+              console.log(a)
               let eventProperties = { 
                 collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}',
                 bucket_id : bucketId,
