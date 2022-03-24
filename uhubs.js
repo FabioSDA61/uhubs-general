@@ -149,6 +149,7 @@ const buckets = document.getElementsByClassName("bucket");
               console.log(a)
               console.log(managerBuckets[i])
               
+              /*
               ['.task-name',
                 '.task-description', 
                 '.task-duration',
@@ -174,6 +175,8 @@ const buckets = document.getElementsByClassName("bucket");
     
                     
                 });
+
+                */
                 managerBuckets[i].querySelector(selector).closest('.task-update-form-container').previousSibling.click();
                 let eventProperties = { 
                   collection_item: '{{wf {&quot;path&quot;:&quot;slug&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}',
