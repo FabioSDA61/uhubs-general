@@ -8,16 +8,20 @@ let allMembers = [];
      allMembers.push(email);
  }
 
- let calendars = document.querySelectorAll('.addeventatc');
- for (var i = 0; i < calendars.length; i++) {
-  calendars[i].style.zIndex = "93"
-}
+
 
 document.getElementById('trigger-edit-view-button').onclick = function (){ 
   console.log('click')
   document.getElementById('target-edit-view-button').click();
 };
 
+
+let calendars = document.querySelectorAll('.addeventatc');
+for (var i = 0; i < calendars.length; i++) {
+ calendars[i].style.zIndex = "93"
+}
+
+/*
 // set calendar events all to tomorrow 9am
 const startDates = document.getElementsByClassName('addeventatc') 
 for (let i = 0; i < startDates.length; i++) {
@@ -30,7 +34,7 @@ for (let i = 0; i < startDates.length; i++) {
   let dateStringWithTime = moment(tomorrow).format('YYYY-MM-DD HH:00:00')
   startDate.innerHTML = dateStringWithTime
 }
-
+*/
 
 const buckets = document.getElementsByClassName("bucket");
 
